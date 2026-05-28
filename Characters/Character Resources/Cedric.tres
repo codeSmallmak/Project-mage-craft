@@ -8,6 +8,7 @@
 script = ExtResource("2_jplqv")
 display_name = "Cedric"
 sprite_sheet = ExtResource("3_jplqv")
+lore = "A humble Hedge-mage"
 base_hp = 100
 starting_energies = Array[int]([4])
 available_energies = Array[int]([4])

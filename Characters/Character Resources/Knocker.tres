@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://cvkvl38mr48o0"]
+
+[ext_resource type="Script" uid="uid://ccokhdmbnt0lh" path="res://Spells/spell_data.gd" id="1_txti6"]
+[ext_resource type="Script" uid="uid://dleei3nj43cis" path="res://Characters/Character Resources/character_data.gd" id="2_blmjs"]
+[ext_resource type="Texture2D" uid="uid://bpf08pojnr81a" path="res://Characters/SkelePlayer.png" id="3_txti6"]
+
+[resource]
+script = ExtResource("2_blmjs")
+id = 2
+display_name = "Knocker"
+sprite_sheet = ExtResource("3_txti6")
+lore = "*RATTLE*"
+base_hp = 100
+starting_energies = Array[int]([8])
+available_energies = Array[int]([8])
+metadata/_custom_type_script = "uid://dleei3nj43cis"

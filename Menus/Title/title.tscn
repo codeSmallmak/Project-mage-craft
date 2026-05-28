@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8qy7rnih4oko"]
 
 [ext_resource type="Script" uid="uid://bxm33gbiky3xw" path="res://Menus/Title/title.gd" id="1_84g5r"]
+[ext_resource type="FontFile" uid="uid://1qiiid880j63" path="res://fonts/BoldPixels.ttf" id="2_ccn5l"]
 
 [node name="Title" type="Control" unique_id=851037938]
 layout_mode = 3
@@ -33,7 +34,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 26
+theme_override_fonts/font = ExtResource("2_ccn5l")
+theme_override_font_sizes/font_size = 32
 text = "RUNEFORM"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -58,7 +60,7 @@ size_flags_vertical = 3
 [node name="NewGameBtn" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=551175279]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_ccn5l")
 text = "NEW"
 
 [node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=640023596]
@@ -69,7 +71,7 @@ size_flags_vertical = 3
 [node name="LoadGameBtn" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1608092334]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_ccn5l")
 text = "LOAD"
 
 [node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1492430655]
@@ -90,6 +92,7 @@ size_flags_vertical = 3
 [node name="ExitBtn" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1956251589]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ccn5l")
 text = "EXIT"
 
 [node name="Spacer5" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1640724633]

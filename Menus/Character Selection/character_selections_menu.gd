@@ -7,14 +7,20 @@ extends Control
 var selected_character: CharacterData = null
 
 func _ready() -> void:
-	%CedricButton.pressed.connect(_on_character_selected.bind(cedric_data))
-	%GenButton.pressed.connect(_on_character_selected.bind(gen_data))
-	%KnockerButton.pressed.connect(_on_character_selected.bind(knocker_data))
+	%CedricButton.pressed.connect(_on_character_selected.bind(cedric_data, %CedricButton))
+	%GenButton.pressed.connect(_on_character_selected.bind(gen_data, %GenButton))
+	%KnockerButton.pressed.connect(_on_character_selected.bind(knocker_data, %KnockerButton))
 	%StartButton.pressed.connect(_on_start)
 	%BackButton.pressed.connect(_on_back)
 	%StartButton.disabled = true
 
-func _on_character_selected(data: CharacterData) -> void:
+var selected_button: Button = null
+
+func _on_character_selected(data: CharacterData, button: Button) -> void:
+	if selected_button:
+		selected_button.button_pressed = false
+	selected_button = button
+	selected_button.button_pressed = true
 	selected_character = data
 	%LoreLabel.text = data.lore
 	%StartButton.disabled = false
@@ -22,8 +28,19 @@ func _on_character_selected(data: CharacterData) -> void:
 func _on_start() -> void:
 	if selected_character == null:
 		return
-	SaveManager.new_run(selected_character.id)
-	get_tree().change_scene_to_file("res://Game/game.tscn")
+	SaveManager.save_data = {
+		"character": selected_character.id,
+		"current_map": "",
+		"current_node": "",
+		"completed_nodes": [],
+		"hp": selected_character.base_hp,
+		"max_hp": selected_character.base_hp,
+		"unlocked_spells": [],
+		"unlocked_energies": selected_character.starting_energies
+	}
+	SaveManager.write()
+	get_tree().change_scene_to_file("res://The Grid/spell_grid.tscn")
+
 
 func _on_back() -> void:
 	get_tree().change_scene_to_file("res://Menus/Title/title.tscn")

@@ -3,7 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://c42cxgctd8ldy" path="res://Characters/WisePlayer.png" id="1_75qr8"]
 [ext_resource type="Script" uid="uid://crf3ce4pqjrph" path="res://Menus/Character Selection/character_selections_menu.gd" id="1_dwec8"]
 [ext_resource type="Texture2D" uid="uid://bdqiflnlodqn1" path="res://Characters/PrincessPlayer.png" id="2_dwec8"]
+[ext_resource type="Resource" uid="uid://gngv5y6rwtkj" path="res://Characters/Character Resources/Cedric.tres" id="2_orgyv"]
+[ext_resource type="Resource" uid="uid://c6sxqg68ftmqy" path="res://Characters/Character Resources/Genevieve.tres" id="3_k1013"]
 [ext_resource type="Texture2D" uid="uid://bpf08pojnr81a" path="res://Characters/SkelePlayer.png" id="3_sfhsl"]
+[ext_resource type="Resource" uid="uid://cvkvl38mr48o0" path="res://Characters/Character Resources/Knocker.tres" id="4_k1013"]
+[ext_resource type="FontFile" uid="uid://1qiiid880j63" path="res://fonts/BoldPixels.ttf" id="8_1yrm8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_orgyv"]
 atlas = ExtResource("1_75qr8")
@@ -27,6 +31,9 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_dwec8")
+cedric_data = ExtResource("2_orgyv")
+gen_data = ExtResource("3_k1013")
+knocker_data = ExtResource("4_k1013")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=172646383]
 layout_mode = 1
@@ -36,6 +43,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="Spacer2" type="Control" parent="VBoxContainer" unique_id=421612912]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer6" type="Control" parent="VBoxContainer" unique_id=1273864742]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2127619358]
 layout_mode = 2
@@ -61,6 +76,10 @@ layout_mode = 2
 theme_override_constants/outline_size = 8
 icon = SubResource("AtlasTexture_1yrm8")
 
+[node name="Spacer3" type="Control" parent="VBoxContainer" unique_id=827276385]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=572202504]
 layout_mode = 2
 theme_override_constants/margin_left = 48
@@ -68,20 +87,62 @@ theme_override_constants/margin_right = 48
 
 [node name="LoreLabel" type="Label" parent="VBoxContainer/MarginContainer" unique_id=1803815319]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5921569)
+theme_override_constants/line_spacing = 4
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("8_1yrm8")
+theme_override_font_sizes/font_size = 16
+text = "TEST LINE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer4" type="Control" parent="VBoxContainer" unique_id=1839082547]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=186640615]
 layout_mode = 2
 alignment = 1
 
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer2" unique_id=1611028024]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=850353231]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_1yrm8")
 text = "BACK"
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer2" unique_id=820363707]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer4" type="Control" parent="VBoxContainer/HBoxContainer2" unique_id=1660924363]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="StartButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1305534554]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_1yrm8")
 text = "START"
+
+[node name="Spacer5" type="Control" parent="VBoxContainer/HBoxContainer2" unique_id=115310747]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer7" type="Control" parent="VBoxContainer" unique_id=749643850]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
