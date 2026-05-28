@@ -20,11 +20,11 @@ func _on_gui_input(event: InputEvent) -> void:
 		is_being_dragged = true
 
 func _input(event):
-	if !is_ready:
+	if !is_ready or !is_being_dragged:
 		return
-	if event is InputEventMouseMotion && is_being_dragged:
+	if event is InputEventMouseMotion:
 		global_position = get_global_mouse_position() - mouse_offset
-	if event.is_action_released("primary") && is_being_dragged:
+	if event.is_action_released("primary"):
 		z_index -= 1
 		is_being_dragged = false
 		
@@ -48,12 +48,23 @@ func _input(event):
 		global_position = dragged_from_pos
 
 func _update_visuals() -> void:
-	var icons = {
-		Globals.EnergyType.FIRE: preload("res://The Grid/Energy Orbs/Energy Icons/fire_energy_icon.tres"),
-		Globals.EnergyType.ICE: preload("res://The Grid/Energy Orbs/Energy Icons/ice_energy_icon.tres"),
-		Globals.EnergyType.LIGHTNING: preload("res://The Grid/Energy Orbs/Energy Icons/lightning_energy_icon.tres"),
-		Globals.EnergyType.NATURE: preload("res://The Grid/Energy Orbs/Energy Icons/nature_energy_icon.tres"),
-		Globals.EnergyType.WATER: preload("res://The Grid/Energy Orbs/Energy Icons/water_energy_icon.tres"),
-		Globals.EnergyType.WIND: preload("res://The Grid/Energy Orbs/Energy Icons/wind_energy_icon.tres"),
-	}
-	%IconSprite.texture = icons[energy_type]
+	# 1. Get the list of names from your enum (e.g., ["NONE", "FIRE", "ICE", ...])
+	var enum_keys = Globals.EnergyType.keys()
+	
+	# Safety check: make sure the current energy_type index is actually valid
+	if energy_type < 0 or energy_type >= enum_keys.size():
+		push_error("Energy type index " + str(energy_type) + " is out of bounds!")
+		return
+		
+	# 2. Convert the enum name to lowercase (e.g., "LIGHTNING" becomes "lightning")
+	var element_name: String = enum_keys[energy_type].to_lower()
+	
+	# 3. Construct the path dynamically
+	var base_path: String = "res://The Grid/Energy Orbs/Energy Icons/"
+	var full_path: String = base_path + element_name + "_energy_icon.tres"
+	
+	# 4. Use load() instead of preload() so it can accept a dynamic string variable
+	if ResourceLoader.exists(full_path):
+		%IconSprite.texture = load(full_path)
+	else:
+		push_error("Automatic Orb Loader: Missing file at '" + full_path + "'. Does the file name match your Globals enum?")

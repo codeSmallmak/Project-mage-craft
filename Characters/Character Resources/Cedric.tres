@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://gngv5y6rwtkj"]
+
+[ext_resource type="Script" uid="uid://ccokhdmbnt0lh" path="res://Spells/spell_data.gd" id="1_rjmr1"]
+[ext_resource type="Script" uid="uid://dleei3nj43cis" path="res://Characters/Character Resources/character_data.gd" id="2_jplqv"]
+[ext_resource type="Texture2D" uid="uid://c42cxgctd8ldy" path="res://Characters/WisePlayer.png" id="3_jplqv"]
+
+[resource]
+script = ExtResource("2_jplqv")
+display_name = "Cedric"
+sprite_sheet = ExtResource("3_jplqv")
+base_hp = 100
+starting_energies = Array[int]([4])
+available_energies = Array[int]([4])
+metadata/_custom_type_script = "uid://dleei3nj43cis"

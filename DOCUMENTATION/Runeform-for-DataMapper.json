@@ -1,0 +1,560 @@
+{
+  "tables": [
+    {
+      "name": "ENERGY ENUM",
+      "x": -1654.3380194373763,
+      "y": 784.008569290154,
+      "fields": [
+        {
+          "name": "NONE",
+          "type": "0",
+          "constraints": []
+        },
+        {
+          "name": "FIRE",
+          "type": "1",
+          "constraints": []
+        },
+        {
+          "name": "ICE",
+          "type": "2",
+          "constraints": []
+        },
+        {
+          "name": "LIGHTNING",
+          "type": "3",
+          "constraints": []
+        },
+        {
+          "name": "NATURE",
+          "type": "4",
+          "constraints": []
+        },
+        {
+          "name": "WATER",
+          "type": "5",
+          "constraints": []
+        },
+        {
+          "name": "WIND",
+          "type": "6",
+          "constraints": []
+        }
+      ],
+      "kind": "table",
+      "body": "",
+      "id": "86fd49d2-d84b-4c5b-bb79-e04874d9c6b4"
+    },
+    {
+      "name": "SpellData",
+      "x": -917.7910534432822,
+      "y": 347.0019632376572,
+      "fields": [
+        {
+          "name": "UUIDid",
+          "type": "string",
+          "constraints": [
+            "PK"
+          ]
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "constraints": []
+        },
+        {
+          "name": "unlocked",
+          "type": "bool",
+          "constraints": []
+        },
+        {
+          "name": "damage",
+          "type": "int",
+          "constraints": []
+        },
+        {
+          "name": "cast_animation",
+          "type": "string [ref]",
+          "constraints": []
+        },
+        {
+          "name": "projectile_scene",
+          "type": "PackedScene",
+          "constraints": []
+        },
+        {
+          "name": "pattern",
+          "type": "int[5][5]",
+          "constraints": []
+        }
+      ],
+      "kind": "table",
+      "body": "",
+      "id": "1f6cf257-25ec-43cb-a30a-f05cbc4ea06c",
+      "assetType": "Resource"
+    },
+    {
+      "name": "Live Grid",
+      "x": -1050,
+      "y": 950,
+      "fields": [
+        {
+          "name": "current",
+          "type": "int[5][5]",
+          "constraints": []
+        }
+      ],
+      "kind": "table",
+      "body": "",
+      "id": "48347bcb-b25c-4ac3-aabb-96152393f439"
+    },
+    {
+      "name": "SpellManager (Autoload)",
+      "x": -600,
+      "y": 1050,
+      "fields": [
+        {
+          "name": "all_spells",
+          "type": "SpellData[]",
+          "constraints": []
+        },
+        {
+          "name": "lookup",
+          "type": "Dictionary<string, SpellData>",
+          "constraints": []
+        }
+      ],
+      "kind": "table",
+      "body": "Builds lookup dict at _ready(). Re-checks on grid change only.",
+      "id": "c1051ae1-46e5-4917-9eba-2a2ece1843df"
+    },
+    {
+      "name": "CharacterData",
+      "x": -339.71655522694664,
+      "y": 373.2513045495599,
+      "fields": [
+        {
+          "name": "id",
+          "type": "int",
+          "constraints": [
+            "PK"
+          ]
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "constraints": []
+        },
+        {
+          "name": "sprite_sheet",
+          "type": "Texture2D",
+          "constraints": []
+        },
+        {
+          "name": "lore",
+          "type": "string",
+          "constraints": []
+        },
+        {
+          "name": "starting_spells",
+          "type": "string[]",
+          "constraints": [
+            "FK -> SpellData.id"
+          ]
+        },
+        {
+          "name": "starting_energies",
+          "type": "int[]",
+          "constraints": [
+            "FK -> ENERGY ENUM"
+          ]
+        },
+        {
+          "name": "available_spells",
+          "type": "string[]",
+          "constraints": [
+            "FK -> SpellData.id"
+          ]
+        },
+        {
+          "name": "available_energies",
+          "type": "int[]",
+          "constraints": [
+            "FK -> ENERGY ENUM"
+          ]
+        },
+        {
+          "name": "base_hp",
+          "type": "int",
+          "constraints": []
+        }
+      ],
+      "kind": "table",
+      "body": "",
+      "id": "char-data-001",
+      "assetType": "Resource"
+    },
+    {
+      "name": "MapData",
+      "x": -190.1565459471903,
+      "y": 880.4921727026405,
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "constraints": [
+            "PK"
+          ]
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "constraints": []
+        },
+        {
+          "name": "nodes",
+          "type": "NodeData[]",
+          "constraints": [
+            "FK -> NodeData.id"
+          ]
+        },
+        {
+          "name": "start_node",
+          "type": "string",
+          "constraints": [
+            "FK -> NodeData.id"
+          ]
+        }
+      ],
+      "kind": "table",
+      "body": "",
+      "id": "map-data-001",
+      "assetType": "Resource"
+    },
+    {
+      "name": "NodeData",
+      "x": 126.78083567393355,
+      "y": 1174.3087047301963,
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "constraints": [
+            "PK"
+          ]
+        },
+        {
+          "name": "reward_type",
+          "type": "enum [spell|energy]",
+          "constraints": []
+        },
+        {
+          "name": "reward_id",
+          "type": "string",
+          "constraints": []
+        },
+        {
+          "name": "connections",
+          "type": "string[]",
+          "constraints": [
+            "FK -> NodeData.id"
+          ]
+        },
+        {
+          "name": "enemy_id",
+          "type": "string",
+          "constraints": []
+        }
+      ],
+      "kind": "table",
+      "body": "reward_id references either SpellData.id or ENERGY ENUM depending on reward_type.",
+      "id": "node-data-001",
+      "assetType": "Resource"
+    },
+    {
+      "name": "RunSave",
+      "x": 638.0549554692449,
+      "y": 608.4876596622386,
+      "fields": [
+        {
+          "name": "character",
+          "type": "int",
+          "constraints": [
+            "FK -> CharacterData.id"
+          ]
+        },
+        {
+          "name": "current_map",
+          "type": "string",
+          "constraints": [
+            "FK -> MapData.id"
+          ]
+        },
+        {
+          "name": "current_node",
+          "type": "string",
+          "constraints": [
+            "FK -> NodeData.id"
+          ]
+        },
+        {
+          "name": "completed_nodes",
+          "type": "string[]",
+          "constraints": [
+            "FK -> NodeData.id"
+          ]
+        },
+        {
+          "name": "hp",
+          "type": "int",
+          "constraints": []
+        },
+        {
+          "name": "max_hp",
+          "type": "int",
+          "constraints": []
+        },
+        {
+          "name": "unlocked_spells",
+          "type": "string[]",
+          "constraints": [
+            "FK -> SpellData.id"
+          ]
+        },
+        {
+          "name": "unlocked_energies",
+          "type": "int[]",
+          "constraints": [
+            "FK -> ENERGY ENUM"
+          ]
+        }
+      ],
+      "kind": "table",
+      "body": "Written to disk as JSON via FileAccess. One slot only. Reset on new run.",
+      "id": "run-save-001"
+    },
+    {
+      "id": "note-pattern",
+      "kind": "note",
+      "name": "NOTE",
+      "body": "pattern int values must match ENERGY ENUM. 0 = empty cell.",
+      "x": -849,
+      "y": 747,
+      "fields": [
+        {
+          "name": "__port__",
+          "type": "port",
+          "constraints": []
+        }
+      ]
+    },
+    {
+      "id": "note-lookup",
+      "kind": "note",
+      "name": "NOTE",
+      "body": "lookup key = pattern flattened to 25-char string. Check fires on grid change, not every frame.",
+      "x": -629,
+      "y": 1270,
+      "fields": [
+        {
+          "name": "__port__",
+          "type": "port",
+          "constraints": []
+        }
+      ]
+    },
+    {
+      "id": "note-runsave",
+      "kind": "note",
+      "name": "NOTE",
+      "body": "RunSave is the only data persisted to disk. All other tables are static Resource definitions loaded at runtime.",
+      "x": 700,
+      "y": 200,
+      "fields": [
+        {
+          "name": "__port__",
+          "type": "port",
+          "constraints": []
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "fromTable": "86fd49d2-d84b-4c5b-bb79-e04874d9c6b4",
+      "fromField": -1,
+      "fromSide": "right",
+      "toTable": "1f6cf257-25ec-43cb-a30a-f05cbc4ea06c",
+      "toField": 6,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "conn-enum-spell",
+      "arrowHead": "towards",
+      "color": "#ffffff"
+    },
+    {
+      "fromTable": "86fd49d2-d84b-4c5b-bb79-e04874d9c6b4",
+      "fromField": -1,
+      "fromSide": "right",
+      "toTable": "48347bcb-b25c-4ac3-aabb-96152393f439",
+      "toField": 0,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "conn-enum-livegrid",
+      "arrowHead": "away"
+    },
+    {
+      "fromTable": "48347bcb-b25c-4ac3-aabb-96152393f439",
+      "fromField": 0,
+      "fromSide": "right",
+      "toTable": "c1051ae1-46e5-4917-9eba-2a2ece1843df",
+      "toField": -1,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "conn-livegrid-manager",
+      "arrowHead": "away"
+    },
+    {
+      "fromTable": "1f6cf257-25ec-43cb-a30a-f05cbc4ea06c",
+      "fromField": -1,
+      "fromSide": "right",
+      "toTable": "c1051ae1-46e5-4917-9eba-2a2ece1843df",
+      "toField": 0,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "conn-spell-manager",
+      "arrowHead": "away",
+      "color": "#fcd34d"
+    },
+    {
+      "fromTable": "1f6cf257-25ec-43cb-a30a-f05cbc4ea06c",
+      "fromField": 6,
+      "fromSide": "right",
+      "toTable": "note-pattern",
+      "toField": 0,
+      "toSide": "left",
+      "lineStyle": "dashed",
+      "id": "conn-note-pattern"
+    },
+    {
+      "fromTable": "c1051ae1-46e5-4917-9eba-2a2ece1843df",
+      "fromField": 1,
+      "fromSide": "right",
+      "toTable": "note-lookup",
+      "toField": 0,
+      "toSide": "left",
+      "lineStyle": "dashed",
+      "id": "conn-note-lookup"
+    },
+    {
+      "fromTable": "char-data-001",
+      "fromField": 4,
+      "fromSide": "right",
+      "toTable": "1f6cf257-25ec-43cb-a30a-f05cbc4ea06c",
+      "toField": 0,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "conn-char-spell",
+      "arrowHead": "towards"
+    },
+    {
+      "fromTable": "char-data-001",
+      "fromField": 5,
+      "fromSide": "left",
+      "toTable": "86fd49d2-d84b-4c5b-bb79-e04874d9c6b4",
+      "toField": -1,
+      "toSide": "right",
+      "lineStyle": "solid",
+      "id": "conn-char-energy",
+      "arrowHead": "towards"
+    },
+    {
+      "fromTable": "run-save-001",
+      "fromField": 0,
+      "fromSide": "left",
+      "toTable": "char-data-001",
+      "toField": 0,
+      "toSide": "right",
+      "lineStyle": "solid",
+      "id": "conn-save-char",
+      "arrowHead": "towards"
+    },
+    {
+      "fromTable": "run-save-001",
+      "fromField": 1,
+      "fromSide": "bottom",
+      "toTable": "map-data-001",
+      "toField": 0,
+      "toSide": "top",
+      "lineStyle": "solid",
+      "id": "conn-save-map",
+      "arrowHead": "towards",
+      "color": "#fdba74"
+    },
+    {
+      "fromTable": "run-save-001",
+      "fromField": 2,
+      "fromSide": "bottom",
+      "toTable": "node-data-001",
+      "toField": 0,
+      "toSide": "top",
+      "lineStyle": "solid",
+      "id": "conn-save-node",
+      "arrowHead": "towards"
+    },
+    {
+      "fromTable": "run-save-001",
+      "fromField": 6,
+      "fromSide": "bottom",
+      "toTable": "1f6cf257-25ec-43cb-a30a-f05cbc4ea06c",
+      "toField": 0,
+      "toSide": "right",
+      "lineStyle": "solid",
+      "id": "conn-save-spell",
+      "arrowHead": "towards"
+    },
+    {
+      "fromTable": "run-save-001",
+      "fromField": 7,
+      "fromSide": "left",
+      "toTable": "86fd49d2-d84b-4c5b-bb79-e04874d9c6b4",
+      "toField": -1,
+      "toSide": "right",
+      "lineStyle": "solid",
+      "id": "conn-save-energy",
+      "arrowHead": "towards"
+    },
+    {
+      "fromTable": "map-data-001",
+      "fromField": 1,
+      "fromSide": "right",
+      "toTable": "node-data-001",
+      "toField": 0,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "conn-map-node",
+      "arrowHead": "away"
+    },
+    {
+      "fromTable": "node-data-001",
+      "fromField": 3,
+      "fromSide": "right",
+      "toTable": "node-data-001",
+      "toField": 0,
+      "toSide": "right",
+      "lineStyle": "dashed",
+      "id": "conn-node-self",
+      "arrowHead": "towards"
+    },
+    {
+      "fromTable": "run-save-001",
+      "fromField": -1,
+      "fromSide": "top",
+      "toTable": "note-runsave",
+      "toField": 0,
+      "toSide": "bottom",
+      "lineStyle": "dashed",
+      "id": "conn-note-runsave"
+    }
+  ]
+}
