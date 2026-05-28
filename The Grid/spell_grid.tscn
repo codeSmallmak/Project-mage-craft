@@ -6,7 +6,7 @@
 
 [node name="SpellGrid" type="HBoxContainer" unique_id=990792362]
 anchors_preset = -1
-anchor_top = 0.467
+anchor_top = 0.5003333
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -0.05999756
