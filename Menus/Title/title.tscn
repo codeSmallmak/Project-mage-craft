@@ -58,9 +58,31 @@ size_flags_vertical = 3
 [node name="NewGameBtn" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=551175279]
 unique_name_in_owner = true
 layout_mode = 2
-text = "NEW GAME"
+theme_override_font_sizes/font_size = 12
+text = "NEW"
 
 [node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=640023596]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LoadGameBtn" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1608092334]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "LOAD"
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1492430655]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer4" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=303944707]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer6" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=890782076]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -70,7 +92,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "EXIT"
 
-[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1492430655]
+[node name="Spacer5" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1640724633]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
