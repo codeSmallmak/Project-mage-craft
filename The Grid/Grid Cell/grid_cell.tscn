@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://m85065l4bhbk"]
+
+[ext_resource type="Script" uid="uid://ikvevphhnxvs" path="res://The Grid/Grid Cell/grid_cell.gd" id="1_4dqgv"]
+
+[node name="GridCell" type="Control" unique_id=1501269663]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 3
+anchor_right = 0.05
+anchor_bottom = 0.089
+offset_right = -16.0
+offset_bottom = -16.02
+mouse_filter = 2
+script = ExtResource("1_4dqgv")
+
+[node name="Panel" type="Panel" parent="." unique_id=184000071]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_filter = 2

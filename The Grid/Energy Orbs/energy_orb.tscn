@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bagio87rt4q36"]
+
+[ext_resource type="Script" uid="uid://b0174fgg5utp4" path="res://The Grid/Energy Orbs/energy_orb.gd" id="1_gx65k"]
+[ext_resource type="Texture2D" uid="uid://bdsrjnoxqymrp" path="res://The Grid/Energy Orbs/Energy Icons/fire_energy_icon.tres" id="2_2k4rb"]
+
+[node name="EnergyOrb" type="Control" unique_id=1396247491]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 3
+anchor_right = 0.05
+anchor_bottom = 0.089
+offset_right = -16.0
+offset_bottom = -16.02
+script = ExtResource("1_gx65k")
+
+[node name="IconSprite" type="Sprite2D" parent="." unique_id=1680900311]
+unique_name_in_owner = true
+position = Vector2(7.7037044, 7.7241387)
+scale = Vector2(0.5925926, 0.55172414)
+texture = ExtResource("2_2k4rb")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

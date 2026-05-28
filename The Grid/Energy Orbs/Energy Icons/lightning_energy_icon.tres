@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://d1twte2i4tark"]
+
+[ext_resource type="Texture2D" uid="uid://c6ie3fldxnuo5" path="res://The Grid/Energy Orbs/Energy Icons/icon_master.png" id="1_2pmvf"]
+
+[resource]
+atlas = ExtResource("1_2pmvf")
+region = Rect2(126, 65, 33, 29)

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b8qy7rnih4oko"]
+
+[node name="Title" type="Control" unique_id=851037938]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=834572371]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="VBoxContainer" unique_id=160109026]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer5" type="Control" parent="VBoxContainer" unique_id=1232185673]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1485150828]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "RUNEFORM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer3" type="Control" parent="VBoxContainer" unique_id=996086597]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer4" type="Control" parent="VBoxContainer" unique_id=1545857446]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=639710844]
+layout_mode = 2
+alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=467520646]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NewGameBtn" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=551175279]
+layout_mode = 2
+text = "NEW GAME"
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=640023596]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ExitBtn" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1956251589]
+layout_mode = 2
+text = "EXIT"
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1492430655]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=2122403167]
+layout_mode = 2
+size_flags_vertical = 3
