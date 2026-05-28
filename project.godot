@@ -28,7 +28,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/drag_and_drop/plugin.cfg")
+enabled=PackedStringArray("res://addons/drag_and_drop/plugin.cfg", "res://addons/fgi/plugin.cfg")
 
 [input]
 
