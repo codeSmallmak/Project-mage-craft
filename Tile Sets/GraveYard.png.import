@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct2flddner4dg"
-path="res://.godot/imported/spr_book_3_strip7.png-8cace4e750e808f04dc8c1a76f5445ea.ctex"
+uid="uid://duleyvymokw8u"
+path="res://.godot/imported/GraveYard.png-52a8fa8e647ff5465f11d75dec528379.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Magic Books/spr_book_3_strip7.png"
-dest_files=["res://.godot/imported/spr_book_3_strip7.png-8cace4e750e808f04dc8c1a76f5445ea.ctex"]
+source_file="res://Tile Sets/GraveYard.png"
+dest_files=["res://.godot/imported/GraveYard.png-52a8fa8e647ff5465f11d75dec528379.ctex"]
 
 [params]
 

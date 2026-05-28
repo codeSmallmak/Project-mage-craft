@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csv8vri26m3rd"
-path="res://.godot/imported/spr_book_6_open_strip7.png-8193755ba7deff5ed54ab9c5ba5bf3d4.ctex"
+uid="uid://dkqfvh4waq5l8"
+path="res://.godot/imported/Magic Books.png-c6f79cd27b3e1ba26f82f44167418b3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Magic Books/spr_book_6_open_strip7.png"
-dest_files=["res://.godot/imported/spr_book_6_open_strip7.png-8193755ba7deff5ed54ab9c5ba5bf3d4.ctex"]
+source_file="res://Magic Books/Magic Books.png"
+dest_files=["res://.godot/imported/Magic Books.png-c6f79cd27b3e1ba26f82f44167418b3d.ctex"]
 
 [params]
 
