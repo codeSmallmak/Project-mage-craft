@@ -8,5 +8,6 @@ id = "0c1a78ab-7269-492f-bdb7-61222960e210-spell"
 display_name = "Fire Bolt"
 unlocked = true
 damage = 2
-pattern = [null]
+rotations = "2way"
+slots = [0, 0, 1, 1, 0, 1, 2, 0, 1]
 metadata/_custom_type_script = "uid://ccokhdmbnt0lh"
