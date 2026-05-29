@@ -18,7 +18,7 @@ func register_spell(spell) -> void:
 # Returns all SpellData whose slot patterns are present on the gird. 
 # grid_state is a dictionary of { Vector2i: int} of only the occupied cells
 func detect_all(grid_state: Dictionary) -> Array:
-	print("detect_all called, grid has ", grid_state.size(), " occupied cells")
+	# print("detect_all called, grid has ", grid_state.size(), " occupied cells")
 	var matches = []
 	# Build a position lookup per orb type for fast anchor filtering
 	# This is what makes it efficient 
