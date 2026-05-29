@@ -44,6 +44,8 @@ func _input(event):
 			original_parent = best_cell
 			dragged_from_pos = best_cell.global_position
 			best_cell.occupied = true
+			best_cell.current_orb = self
+			get_tree().get_first_node_in_group("spell_grid").on_orb_placed()
 		
 		global_position = dragged_from_pos
 
