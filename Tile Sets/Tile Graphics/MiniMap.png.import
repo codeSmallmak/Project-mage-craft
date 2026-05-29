@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfc7c2k1vr5gm"
-path="res://.godot/imported/sewer.png-1833b5b121d276c9241cd9046b50316e.ctex"
+uid="uid://dabagq0gq72s1"
+path="res://.godot/imported/MiniMap.png-7d1f00cfa48ec68a3cbc560cecee5f0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile Sets/sewer.png"
-dest_files=["res://.godot/imported/sewer.png-1833b5b121d276c9241cd9046b50316e.ctex"]
+source_file="res://Tile Sets/Tile Graphics/MiniMap.png"
+dest_files=["res://.godot/imported/MiniMap.png-7d1f00cfa48ec68a3cbc560cecee5f0f.ctex"]
 
 [params]
 

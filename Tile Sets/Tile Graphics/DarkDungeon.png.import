@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dabagq0gq72s1"
-path="res://.godot/imported/MiniMap.png-56450264e222a4d09fc138f267059847.ctex"
+uid="uid://c2kp440kaw86b"
+path="res://.godot/imported/DarkDungeon.png-1f9500f56d15778a054a2be5e7ed8fd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile Sets/MiniMap.png"
-dest_files=["res://.godot/imported/MiniMap.png-56450264e222a4d09fc138f267059847.ctex"]
+source_file="res://Tile Sets/Tile Graphics/DarkDungeon.png"
+dest_files=["res://.godot/imported/DarkDungeon.png-1f9500f56d15778a054a2be5e7ed8fd5.ctex"]
 
 [params]
 

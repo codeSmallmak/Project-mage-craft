@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djx7qais4qhtc"
-path="res://.godot/imported/desert.png-661a81a33d9629e13126ce68573ed5e7.ctex"
+uid="uid://duleyvymokw8u"
+path="res://.godot/imported/GraveYard.png-467fb14b5c14fb67208878dfd4f72ee7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile Sets/desert.png"
-dest_files=["res://.godot/imported/desert.png-661a81a33d9629e13126ce68573ed5e7.ctex"]
+source_file="res://Tile Sets/Tile Graphics/GraveYard.png"
+dest_files=["res://.godot/imported/GraveYard.png-467fb14b5c14fb67208878dfd4f72ee7.ctex"]
 
 [params]
 

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ovreswmnx6n"]
+
+[ext_resource type="PackedScene" uid="uid://7erkxyd7vuk6" path="res://Levels/Tilemap Chunks/forest_chunk.tscn" id="1_uvd1l"]
+
+[node name="Test" type="Node2D" unique_id=1351634210]
+
+[node name="ForestChunk" parent="." unique_id=420526496 instance=ExtResource("1_uvd1l")]

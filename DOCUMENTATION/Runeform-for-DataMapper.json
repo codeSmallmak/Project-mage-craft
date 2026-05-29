@@ -2,8 +2,8 @@
   "tables": [
     {
       "name": "ENERGY ENUM",
-      "x": -1654.3380194373763,
-      "y": 784.008569290154,
+      "x": -1654,
+      "y": 784,
       "fields": [
         {
           "name": "NONE",
@@ -47,11 +47,11 @@
     },
     {
       "name": "SpellData",
-      "x": -917.7910534432822,
-      "y": 347.0019632376572,
+      "x": -917,
+      "y": 347,
       "fields": [
         {
-          "name": "UUIDid",
+          "name": "id",
           "type": "string",
           "constraints": [
             "PK"
@@ -95,8 +95,8 @@
     },
     {
       "name": "Live Grid",
-      "x": -1050,
-      "y": 950,
+      "x": -1173.288492226684,
+      "y": 988.1073521427933,
       "fields": [
         {
           "name": "current",
@@ -130,8 +130,8 @@
     },
     {
       "name": "CharacterData",
-      "x": -339.71655522694664,
-      "y": 373.2513045495599,
+      "x": -339,
+      "y": 373,
       "fields": [
         {
           "name": "id",
@@ -157,7 +157,7 @@
         },
         {
           "name": "starting_spells",
-          "type": "string[]",
+          "type": "SpellData[]",
           "constraints": [
             "FK -> SpellData.id"
           ]
@@ -171,7 +171,7 @@
         },
         {
           "name": "available_spells",
-          "type": "string[]",
+          "type": "SpellData[]",
           "constraints": [
             "FK -> SpellData.id"
           ]
@@ -195,86 +195,9 @@
       "assetType": "Resource"
     },
     {
-      "name": "MapData",
-      "x": -190.1565459471903,
-      "y": 880.4921727026405,
-      "fields": [
-        {
-          "name": "id",
-          "type": "string",
-          "constraints": [
-            "PK"
-          ]
-        },
-        {
-          "name": "display_name",
-          "type": "string",
-          "constraints": []
-        },
-        {
-          "name": "nodes",
-          "type": "NodeData[]",
-          "constraints": [
-            "FK -> NodeData.id"
-          ]
-        },
-        {
-          "name": "start_node",
-          "type": "string",
-          "constraints": [
-            "FK -> NodeData.id"
-          ]
-        }
-      ],
-      "kind": "table",
-      "body": "",
-      "id": "map-data-001",
-      "assetType": "Resource"
-    },
-    {
-      "name": "NodeData",
-      "x": 126.78083567393355,
-      "y": 1174.3087047301963,
-      "fields": [
-        {
-          "name": "id",
-          "type": "string",
-          "constraints": [
-            "PK"
-          ]
-        },
-        {
-          "name": "reward_type",
-          "type": "enum [spell|energy]",
-          "constraints": []
-        },
-        {
-          "name": "reward_id",
-          "type": "string",
-          "constraints": []
-        },
-        {
-          "name": "connections",
-          "type": "string[]",
-          "constraints": [
-            "FK -> NodeData.id"
-          ]
-        },
-        {
-          "name": "enemy_id",
-          "type": "string",
-          "constraints": []
-        }
-      ],
-      "kind": "table",
-      "body": "reward_id references either SpellData.id or ENERGY ENUM depending on reward_type.",
-      "id": "node-data-001",
-      "assetType": "Resource"
-    },
-    {
       "name": "RunSave",
-      "x": 638.0549554692449,
-      "y": 608.4876596622386,
+      "x": 638,
+      "y": 608,
       "fields": [
         {
           "name": "character",
@@ -334,6 +257,271 @@
       "id": "run-save-001"
     },
     {
+      "name": "MapData",
+      "x": -190,
+      "y": 880,
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "constraints": [
+            "PK"
+          ]
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "constraints": []
+        },
+        {
+          "name": "nodes",
+          "type": "NodeData[]",
+          "constraints": [
+            "FK -> NodeData.id"
+          ]
+        },
+        {
+          "name": "start_node",
+          "type": "string",
+          "constraints": [
+            "FK -> NodeData.id"
+          ]
+        }
+      ],
+      "kind": "table",
+      "body": "",
+      "id": "map-data-001",
+      "assetType": "Resource"
+    },
+    {
+      "name": "NodeData",
+      "x": 126,
+      "y": 1174,
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "constraints": [
+            "PK"
+          ]
+        },
+        {
+          "name": "reward_type",
+          "type": "enum [spell|energy]",
+          "constraints": []
+        },
+        {
+          "name": "reward_id",
+          "type": "string",
+          "constraints": []
+        },
+        {
+          "name": "connections",
+          "type": "string[]",
+          "constraints": [
+            "FK -> NodeData.id"
+          ]
+        },
+        {
+          "name": "level",
+          "type": "LevelData",
+          "constraints": [
+            "FK -> LevelData.id"
+          ]
+        }
+      ],
+      "kind": "table",
+      "body": "Each node on the overworld map points to a LevelData resource that defines the encounter.",
+      "id": "node-data-001",
+      "assetType": "Resource"
+    },
+    {
+      "name": "LevelData",
+      "x": 588.3242362797359,
+      "y": 1554.6298972806069,
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "constraints": [
+            "PK"
+          ]
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "constraints": []
+        },
+        {
+          "name": "scroll_speed",
+          "type": "float",
+          "constraints": []
+        },
+        {
+          "name": "encounter_count",
+          "type": "int",
+          "constraints": []
+        },
+        {
+          "name": "chunk_scene",
+          "type": "PackedScene",
+          "constraints": []
+        },
+        {
+          "name": "spawn_table",
+          "type": "SpawnEntry[]",
+          "constraints": [
+            "FK -> SpawnEntry"
+          ]
+        },
+        {
+          "name": "prop_rules",
+          "type": "PropRule[]",
+          "constraints": [
+            "FK -> PropRule"
+          ]
+        },
+        {
+          "name": "boss",
+          "type": "EnemyData",
+          "constraints": [
+            "FK -> EnemyData.id"
+          ]
+        }
+      ],
+      "kind": "table",
+      "body": "One LevelData per node encounter. Drives the WorldSpawner and ScrollManager at runtime.",
+      "id": "level-data-001",
+      "assetType": "Resource"
+    },
+    {
+      "name": "PropRule",
+      "x": 1080.3466378093042,
+      "y": 1453.5305685457465,
+      "fields": [
+        {
+          "name": "prop_scene",
+          "type": "PackedScene",
+          "constraints": []
+        },
+        {
+          "name": "spawn_weight",
+          "type": "float",
+          "constraints": []
+        },
+        {
+          "name": "min_distance_apart",
+          "type": "float",
+          "constraints": []
+        },
+        {
+          "name": "x_range_min",
+          "type": "float",
+          "constraints": []
+        },
+        {
+          "name": "x_range_max",
+          "type": "float",
+          "constraints": []
+        },
+        {
+          "name": "avoid_path",
+          "type": "bool",
+          "constraints": []
+        },
+        {
+          "name": "z_layer",
+          "type": "int",
+          "constraints": []
+        }
+      ],
+      "kind": "table",
+      "body": "Defines rules for spawning one type of prop. x_range defines horizontal band on screen. avoid_path keeps props off the walkable center.",
+      "id": "prop-rule-001",
+      "assetType": "Resource"
+    },
+    {
+      "name": "SpawnEntry",
+      "x": 1062.518507642972,
+      "y": 1854.7563839743468,
+      "fields": [
+        {
+          "name": "enemy",
+          "type": "EnemyData",
+          "constraints": [
+            "FK -> EnemyData.id"
+          ]
+        },
+        {
+          "name": "weight",
+          "type": "float",
+          "constraints": []
+        },
+        {
+          "name": "min_encounter",
+          "type": "int",
+          "constraints": []
+        }
+      ],
+      "kind": "table",
+      "body": "Weighted entry in a level spawn table. min_encounter gates when an enemy can first appear in the level.",
+      "id": "spawn-entry-001",
+      "assetType": "Resource"
+    },
+    {
+      "name": "EnemyData",
+      "x": 1621.5120878081202,
+      "y": 1654.5192437274202,
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "constraints": [
+            "PK"
+          ]
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "constraints": []
+        },
+        {
+          "name": "sprite_sheet",
+          "type": "Texture2D",
+          "constraints": []
+        },
+        {
+          "name": "hp",
+          "type": "int",
+          "constraints": []
+        },
+        {
+          "name": "speed",
+          "type": "float",
+          "constraints": []
+        },
+        {
+          "name": "attack_damage",
+          "type": "int",
+          "constraints": []
+        },
+        {
+          "name": "attack_interval",
+          "type": "float",
+          "constraints": []
+        },
+        {
+          "name": "is_boss",
+          "type": "bool",
+          "constraints": []
+        }
+      ],
+      "kind": "table",
+      "body": "",
+      "id": "enemy-data-001",
+      "assetType": "Resource"
+    },
+    {
       "id": "note-pattern",
       "kind": "note",
       "name": "NOTE",
@@ -368,8 +556,23 @@
       "kind": "note",
       "name": "NOTE",
       "body": "RunSave is the only data persisted to disk. All other tables are static Resource definitions loaded at runtime.",
-      "x": 700,
-      "y": 200,
+      "x": 668,
+      "y": 432,
+      "fields": [
+        {
+          "name": "__port__",
+          "type": "port",
+          "constraints": []
+        }
+      ]
+    },
+    {
+      "id": "note-leveldata",
+      "kind": "note",
+      "name": "NOTE",
+      "body": "WorldSpawner reads LevelData at runtime to spawn props and enemies. Nothing is pre-placed — all placement is procedural driven by rules.",
+      "x": 629.3730865402048,
+      "y": 1386.4187500396504,
       "fields": [
         {
           "name": "__port__",
@@ -547,6 +750,50 @@
       "arrowHead": "towards"
     },
     {
+      "fromTable": "node-data-001",
+      "fromField": 4,
+      "fromSide": "right",
+      "toTable": "level-data-001",
+      "toField": 0,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "conn-node-level",
+      "arrowHead": "towards"
+    },
+    {
+      "fromTable": "level-data-001",
+      "fromField": 7,
+      "fromSide": "right",
+      "toTable": "spawn-entry-001",
+      "toField": -1,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "conn-level-spawn",
+      "arrowHead": "away",
+      "color": "#ef4444"
+    },
+    {
+      "fromTable": "spawn-entry-001",
+      "fromField": 0,
+      "fromSide": "right",
+      "toTable": "enemy-data-001",
+      "toField": 0,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "conn-spawn-enemy",
+      "arrowHead": "towards"
+    },
+    {
+      "fromTable": "level-data-001",
+      "fromField": -1,
+      "fromSide": "bottom",
+      "toTable": "note-leveldata",
+      "toField": 0,
+      "toSide": "top",
+      "lineStyle": "dashed",
+      "id": "conn-note-leveldata"
+    },
+    {
       "fromTable": "run-save-001",
       "fromField": -1,
       "fromSide": "top",
@@ -555,6 +802,27 @@
       "toSide": "bottom",
       "lineStyle": "dashed",
       "id": "conn-note-runsave"
+    },
+    {
+      "fromTable": "level-data-001",
+      "fromField": 6,
+      "fromSide": "right",
+      "toTable": "prop-rule-001",
+      "toField": -1,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "f93706d0-1ae8-49a8-b0f8-6a6ebe6084ea"
+    },
+    {
+      "fromTable": "level-data-001",
+      "fromField": 5,
+      "fromSide": "right",
+      "toTable": "spawn-entry-001",
+      "toField": -1,
+      "toSide": "left",
+      "lineStyle": "solid",
+      "id": "ba21edc5-8eb6-4bf3-9139-555ea2e9b5f6",
+      "arrowHead": "away"
     }
   ]
 }

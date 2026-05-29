@@ -18,9 +18,10 @@ func _build_lookup() -> void:
 func check_pattern(grid: Array) -> SpellData:
 	return _lookup.get(_pattern_to_key(grid), null)
 
-func _pattern_to_key(pattern: Array) -> String:
-	var key = ""
-	for row in pattern:
-		for cell in row:
-			key += str(cell)
-	return key
+func _pattern_to_key(_pattern: Array) -> String:
+	return ""
+	#var key = ""
+	#for row in pattern:
+		#for cell in row:
+			#key += str(cell)
+	#return key

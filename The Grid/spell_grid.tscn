@@ -5,13 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://cjvc3jjrq3ihr" path="res://The Grid/Energy Tray/tray_slot.tscn" id="2_pors6"]
 
 [node name="SpellGrid" type="HBoxContainer" unique_id=990792362]
-anchors_preset = -1
-anchor_top = 0.5003333
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -0.05999756
+offset_top = 92.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment = 1
 script = ExtResource("1_uwfko")
 metadata/_edit_use_anchors_ = true

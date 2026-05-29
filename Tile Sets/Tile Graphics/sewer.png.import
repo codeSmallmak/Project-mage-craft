@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duleyvymokw8u"
-path="res://.godot/imported/GraveYard.png-52a8fa8e647ff5465f11d75dec528379.ctex"
+uid="uid://cfc7c2k1vr5gm"
+path="res://.godot/imported/sewer.png-f485f3a9c31ec6d4167e5e80687f04b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile Sets/GraveYard.png"
-dest_files=["res://.godot/imported/GraveYard.png-52a8fa8e647ff5465f11d75dec528379.ctex"]
+source_file="res://Tile Sets/Tile Graphics/sewer.png"
+dest_files=["res://.godot/imported/sewer.png-f485f3a9c31ec6d4167e5e80687f04b9.ctex"]
 
 [params]
 
