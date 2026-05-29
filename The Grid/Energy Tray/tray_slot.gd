@@ -11,9 +11,10 @@ func _ready() -> void:
 func spawn_orb() -> void:
 	if occupied:
 		return
-	var values = Globals.EnergyType.values()
-	values.remove_at(0) # remove NONE
-	var random_type = values[randi() % values.size()]
+	var unlocked = SaveManager.save_data.get("unlocked_energies", [])
+	if unlocked.is_empty():
+		return
+	var random_type = unlocked[randi() % unlocked.size()]
 	var inst = EnergyOrbScene.instantiate()
 	inst.energy_type = random_type
 	inst.original_parent = self
