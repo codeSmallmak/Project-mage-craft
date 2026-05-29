@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6orwy"]
 size = Vector2(4, 4)
 
-[node name="MapNode" type="Node2D" unique_id=147155673]
+[node name="MapNode" type="Node2D" unique_id=147155673 groups=["map_nodes"]]
 script = ExtResource("1_6orwy")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=294801139]

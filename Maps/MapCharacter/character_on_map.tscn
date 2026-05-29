@@ -95,13 +95,12 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yu8s"]
-size = Vector2(14, 10)
+size = Vector2(6, 6)
 
 [node name="CharacterOnMap" type="Node2D" unique_id=697541786]
 script = ExtResource("1_gweh7")
 
 [node name="CharacterTexture" type="Sprite2D" parent="." unique_id=529833218]
-position = Vector2(0, -7)
 texture = ExtResource("1_q335c")
 hframes = 12
 vframes = 8
@@ -112,5 +111,11 @@ libraries/ = SubResource("AnimationLibrary_wodup")
 [node name="Area2D" type="Area2D" parent="." unique_id=1281030049]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=858405614]
-position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_2yu8s")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1142618238]
+target_desired_distance = 1.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
