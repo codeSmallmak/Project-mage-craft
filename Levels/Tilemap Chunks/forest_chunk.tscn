@@ -12,7 +12,7 @@ tile_map_data = PackedByteArray("AAAAAAMAAgADABwAAAAAAAQAAgAEAB0AAAABAAMAAgACABw
 tile_set = ExtResource("1_u0hc2")
 
 [node name="PrincessPlayer" type="Sprite2D" parent="." unique_id=1960207923]
-position = Vector2(12, 55)
+position = Vector2(48, 56)
 texture = ExtResource("2_ggbr2")
 region_enabled = true
 region_rect = Rect2(59, 100, 25, 32)
