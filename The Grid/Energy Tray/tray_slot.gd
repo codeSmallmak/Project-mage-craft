@@ -11,6 +11,8 @@ func _ready() -> void:
 func spawn_orb() -> void:
 	if occupied:
 		return
+	if not is_inside_tree():
+		return
 	var unlocked = SaveManager.save_data.get("unlocked_energies", [])
 	if unlocked.is_empty():
 		return

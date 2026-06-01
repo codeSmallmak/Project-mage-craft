@@ -39,7 +39,7 @@ func _on_start() -> void:
 		"unlocked_energies": selected_character.starting_energies
 	}
 	SaveManager.write()
-	get_tree().change_scene_to_file("res://The Grid/spell_grid.tscn")
+	get_tree().change_scene_to_file("res://Maps/world1.tscn")
 
 
 func _on_back() -> void:

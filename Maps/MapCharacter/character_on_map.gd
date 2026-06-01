@@ -6,22 +6,54 @@ var goal_node: MapNode = null
 var is_moving: bool = false
 var move_speed: float = 50.0
 var last_position: Vector2 = Vector2.ZERO
-
+signal node_entered(map_node: MapNode)
+signal node_exited(map_node: MapNode)
+var last_direction: String = "down"
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite = %CharacterTexture
+
+
+func _ready() -> void:
+	if SaveManager.save_data.has("current_node"):
+		var node_name = SaveManager.save_data["current_node"]
+		if node_name != "":
+			var results = get_tree().get_nodes_in_group("map_nodes").filter(
+				func(n): return n.name == node_name
+			)
+			if not results.is_empty():
+				global_position = results.front().global_position
+
+	if SaveManager.save_data.has("previous_node"):
+		var prev_name = SaveManager.save_data["previous_node"]
+		if prev_name != "":
+			var results = get_tree().get_nodes_in_group("map_nodes").filter(
+				func(n): return n.name == prev_name
+			)
+			if not results.is_empty():
+				previous_node = results.front()
+
+	var char_id = int(SaveManager.save_data.get("character", -1))
+	print("char_id on ready: ", char_id)
+	if char_id >= 0:
+		var char_data = CharacterManager.lookup.get(char_id)
+		if char_data != null:
+			%CharacterTexture.texture = char_data.sprite_sheet
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var node = area.get_parent()
 	if node is MapNode:
 		current_node = node
-		print("entered node: ", node.name)
+		node_entered.emit(node)
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	var node = area.get_parent()
 	if node is MapNode:
+		node_exited.emit(node)
 		if current_node != null and !current_node.is_blocking:
 			previous_node = current_node
+			SaveManager.save_data["previous_node"] = current_node.name
 			print("previous node set to: ", previous_node.name)
 
 func _input(event: InputEvent) -> void:
@@ -69,7 +101,7 @@ func _process(delta: float) -> void:
 func _move_to_goal() -> void:
 	is_moving = true
 	nav_agent.target_position = goal_node.global_position
-	nav_agent.target_desired_distance = 4.0
+	nav_agent.target_desired_distance = 1.0
 	
 	var diff = goal_node.global_position - global_position
 	if abs(diff.x) > abs(diff.y):
@@ -84,20 +116,27 @@ func _move_to_goal() -> void:
 			anim_player.play("WalkUp")
 
 func _update_animation(diff: Vector2) -> void:
+	var anim = ""
 	if abs(diff.x) > abs(diff.y):
 		if diff.x > 0:
-			anim_player.play("WalkRight")
+			last_direction = "right"
+			anim = "WalkRight"
 		else:
-			anim_player.play("WalkLeft")
+			last_direction = "left"
+			anim = "WalkLeft"
 	else:
 		if diff.y > 0:
-			anim_player.play("WalkDown")
+			last_direction = "down"
+			anim = "WalkDown"
 		else:
-			anim_player.play("WalkUp")
+			last_direction = "up"
+			anim = "WalkUp"
+	if anim_player.current_animation != anim:
+		anim_player.play(anim)
 
 func _on_navigation_agent_2d_target_reached() -> void:
 	print("target reached signal fired")
 	is_moving = false
 	goal_node = null
-	anim_player.stop()
+	anim_player.play("Idle" + last_direction.capitalize())
 	print("arrived at: ", str(current_node.name) if current_node else "unknown")

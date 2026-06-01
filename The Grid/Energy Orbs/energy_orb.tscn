@@ -4,18 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://bdsrjnoxqymrp" path="res://The Grid/Energy Orbs/Energy Icons/fire_energy_icon.tres" id="2_2k4rb"]
 
 [node name="EnergyOrb" type="Control" unique_id=1396247491]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(12, 12)
 layout_mode = 3
-anchor_right = 0.05
-anchor_bottom = 0.089
-offset_right = -16.0
-offset_bottom = -16.02
+anchor_right = 0.037
+anchor_bottom = 0.067
+offset_right = 0.15999985
+offset_bottom = -0.06000042
 script = ExtResource("1_gx65k")
 
 [node name="IconSprite" type="Sprite2D" parent="." unique_id=1680900311]
 unique_name_in_owner = true
-position = Vector2(7.7037044, 7.7241387)
-scale = Vector2(0.5925926, 0.55172414)
+position = Vector2(5.777778, 5.793104)
+scale = Vector2(0.44444442, 0.41379315)
 texture = ExtResource("2_2k4rb")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

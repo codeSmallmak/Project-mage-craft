@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://d75vilmruhos"]
+
+[ext_resource type="Script" uid="uid://d2anpn1aj243d" path="res://Maps/mini_map_menu.gd" id="1_f0bbl"]
+[ext_resource type="FontFile" uid="uid://1qiiid880j63" path="res://fonts/BoldPixels.ttf" id="2_j831a"]
+
+[node name="MiniMapMenu" type="CanvasLayer" unique_id=633774036]
+script = ExtResource("1_f0bbl")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1578316704]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1058330350]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1815165763]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=92764222]
+layout_mode = 2
+
+[node name="LevelNameLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=427772853]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_j831a")
+theme_override_font_sizes/font_size = 14
+text = "level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnterButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=639999679]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j831a")
+theme_override_font_sizes/font_size = 12
+text = "Enter"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/EnterButton" to="." method="_on_enter_button_pressed"]

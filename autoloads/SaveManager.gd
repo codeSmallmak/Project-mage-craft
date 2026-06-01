@@ -9,6 +9,7 @@ func new_run(character_id: int) -> void:
 		"character": character_id,
 		"current_map": "",
 		"current_node": "",
+		"previous_node": "",
 		"completed_nodes": [],
 		"hp": 0,
 		"max_hp": 0,
@@ -35,3 +36,15 @@ func delete_save() -> void:
 	if has_save():
 		DirAccess.remove_absolute(SAVE_PATH)
 		save_data = {}
+
+func complete_node(node_id: String) -> void:
+	if not save_data.has("completed_nodes"):
+		return
+	if not save_data["completed_nodes"].has(node_id):
+		save_data["completed_nodes"].append(node_id)
+	write()
+
+func is_node_completed(node_id: String) -> bool:
+	if not save_data.has("completed_nodes"):
+		return false
+	return save_data["completed_nodes"].has(node_id)

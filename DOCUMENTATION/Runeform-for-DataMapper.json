@@ -221,6 +221,13 @@
 		  ]
 		},
 		{
+		  "name": "previous_node",
+		  "type": "string",
+		  "constraints": [
+            "FK -> NodeData.id"
+		  ]
+		},
+		{
 		  "name": "completed_nodes",
 		  "type": "string[]",
 		  "constraints": [
@@ -253,13 +260,13 @@
 		}
 	  ],
 	  "kind": "table",
-	  "body": "Written to disk as JSON via FileAccess. One slot only. Reset on new run.",
+	  "body": "Written to disk as JSON via FileAccess. One slot only. Reset on new run. current_node and previous_node restored to CharacterOnMap._ready() on map load. completed_nodes drives is_blocking state on MapNodes.",
 	  "id": "run-save-001"
 	},
 	{
 	  "name": "MapData",
-	  "x": -190,
-	  "y": 880,
+	  "x": 1136.6314546873743,
+	  "y": 428.69818324327736,
 	  "fields": [
 		{
 		  "name": "id",
@@ -295,8 +302,8 @@
 	},
 	{
 	  "name": "NodeData",
-	  "x": 126,
-	  "y": 1174,
+	  "x": 179.59405354565942,
+	  "y": 1171.385655924602,
 	  "fields": [
 		{
 		  "name": "id",
@@ -580,6 +587,214 @@
 		  "constraints": []
 		}
 	  ]
+	},
+	{
+	  "name": "SaveManager (Autoload)",
+	  "x": 638,
+	  "y": 200,
+	  "fields": [
+		{
+		  "name": "save_data",
+		  "type": "Dictionary",
+		  "constraints": []
+		},
+		{
+		  "name": "new_run(character_id)",
+		  "type": "void",
+		  "constraints": []
+		},
+		{
+		  "name": "write()",
+		  "type": "void",
+		  "constraints": []
+		},
+		{
+		  "name": "read()",
+		  "type": "bool",
+		  "constraints": []
+		},
+		{
+		  "name": "complete_node(node_id)",
+		  "type": "void",
+		  "constraints": []
+		},
+		{
+		  "name": "is_node_completed(node_id)",
+		  "type": "bool",
+		  "constraints": []
+		},
+		{
+		  "name": "has_save()",
+		  "type": "bool",
+		  "constraints": []
+		},
+		{
+		  "name": "delete_save()",
+		  "type": "void",
+		  "constraints": []
+		}
+	  ],
+	  "kind": "table",
+	  "body": "Owns RunSave in memory. Reads from user://save.json on map load. Writes on node exit and level entry. Bootstrapped by World1._ready().",
+	  "id": "save-manager-001"
+	},
+	{
+	  "name": "MapNode (Scene Node)",
+	  "x": 1148.5044157992734,
+	  "y": 979.9445786084667,
+	  "fields": [
+		{
+		  "name": "up",
+		  "type": "string",
+		  "constraints": [
+            "FK -> MapNode.name"
+		  ]
+		},
+		{
+		  "name": "down",
+		  "type": "string",
+		  "constraints": [
+            "FK -> MapNode.name"
+		  ]
+		},
+		{
+		  "name": "left",
+		  "type": "string",
+		  "constraints": [
+            "FK -> MapNode.name"
+		  ]
+		},
+		{
+		  "name": "right",
+		  "type": "string",
+		  "constraints": [
+            "FK -> MapNode.name"
+		  ]
+		},
+		{
+		  "name": "is_blocking",
+		  "type": "bool",
+		  "constraints": []
+		},
+		{
+		  "name": "is_level",
+		  "type": "bool",
+		  "constraints": []
+		},
+		{
+		  "name": "level_name",
+		  "type": "string",
+		  "constraints": []
+		},
+		{
+		  "name": "level_scene",
+		  "type": "PackedScene",
+		  "constraints": []
+		}
+	  ],
+	  "kind": "table",
+	  "body": "Runtime scene node. is_blocking set at _ready() via SaveManager.is_node_completed(name). _enter_level() saves current_node to SaveManager then calls change_scene_to_packed.",
+	  "id": "map-node-001"
+	},
+	{
+	  "name": "CharacterOnMap (Scene Node)",
+	  "x": -190,
+	  "y": 500,
+	  "fields": [
+		{
+		  "name": "current_node",
+		  "type": "MapNode",
+		  "constraints": []
+		},
+		{
+		  "name": "previous_node",
+		  "type": "MapNode",
+		  "constraints": []
+		},
+		{
+		  "name": "goal_node",
+		  "type": "MapNode",
+		  "constraints": []
+		},
+		{
+		  "name": "is_moving",
+		  "type": "bool",
+		  "constraints": []
+		},
+		{
+		  "name": "signal node_entered(MapNode)",
+		  "type": "signal",
+		  "constraints": []
+		},
+		{
+		  "name": "signal node_exited(MapNode)",
+		  "type": "signal",
+		  "constraints": []
+		}
+	  ],
+	  "kind": "table",
+	  "body": "Restores current_node and previous_node from SaveManager on _ready(). Emits node_entered/node_exited signals. Saves previous_node to SaveManager on area_exited.",
+	  "id": "character-on-map-001"
+	},
+	{
+	  "name": "MiniMapMenu (CanvasLayer)",
+	  "x": 200,
+	  "y": 300,
+	  "fields": [
+		{
+		  "name": "current_node",
+		  "type": "MapNode",
+		  "constraints": []
+		},
+		{
+		  "name": "panel",
+		  "type": "PanelContainer",
+		  "constraints": []
+		},
+		{
+		  "name": "label",
+		  "type": "Label",
+		  "constraints": []
+		},
+		{
+		  "name": "button",
+		  "type": "Button",
+		  "constraints": []
+		}
+	  ],
+	  "kind": "table",
+	  "body": "Listens to CharacterOnMap.node_entered/node_exited. Shows level panel when is_level=true. Enter button calls MapNode._enter_level().",
+	  "id": "mini-map-menu-001"
+	},
+	{
+	  "id": "note-mapnode-blocking",
+	  "kind": "note",
+	  "name": "NOTE",
+	  "body": "MapNode.is_blocking is set at _ready() by SaveManager.is_node_completed(name). Blocking nodes only allow movement back to previous_node. Beating a level calls SaveManager.complete_node() which unblocks on next map load.",
+	  "x": 1148.949548668032,
+	  "y": 748.4599218186186,
+	  "fields": [
+		{
+		  "name": "__port__",
+		  "type": "port",
+		  "constraints": []
+		}
+	  ]
+	},
+	{
+	  "id": "note-savemanager-bootstrap",
+	  "kind": "note",
+	  "name": "NOTE",
+	  "body": "World1._ready() bootstraps SaveManager: if has_save() then read() else new_run(0). Must fire before any MapNode._ready() checks is_node_completed.",
+	  "x": 638,
+	  "y": 50,
+	  "fields": [
+		{
+		  "name": "__port__",
+		  "type": "port",
+		  "constraints": []
+		}
+	  ]
 	}
   ],
   "connections": [
@@ -823,6 +1038,96 @@
 	  "lineStyle": "solid",
 	  "id": "ba21edc5-8eb6-4bf3-9139-555ea2e9b5f6",
 	  "arrowHead": "away"
+	},
+	{
+	  "fromTable": "save-manager-001",
+	  "fromField": -1,
+	  "fromSide": "bottom",
+	  "toTable": "run-save-001",
+	  "toField": -1,
+	  "toSide": "top",
+	  "lineStyle": "solid",
+	  "id": "conn-savemanager-runsave",
+	  "arrowHead": "away",
+	  "color": "#34d399"
+	},
+	{
+	  "fromTable": "run-save-001",
+	  "fromField": 3,
+	  "fromSide": "bottom",
+	  "toTable": "map-node-001",
+	  "toField": 4,
+	  "toSide": "top",
+	  "lineStyle": "dashed",
+	  "id": "conn-save-prevnode",
+	  "arrowHead": "towards"
+	},
+	{
+	  "fromTable": "save-manager-001",
+	  "fromField": 5,
+	  "fromSide": "left",
+	  "toTable": "map-node-001",
+	  "toField": 4,
+	  "toSide": "right",
+	  "lineStyle": "dashed",
+	  "id": "conn-savemanager-isblocking",
+	  "arrowHead": "towards",
+	  "color": "#f87171"
+	},
+	{
+	  "fromTable": "character-on-map-001",
+	  "fromField": 4,
+	  "fromSide": "right",
+	  "toTable": "mini-map-menu-001",
+	  "toField": -1,
+	  "toSide": "left",
+	  "lineStyle": "solid",
+	  "id": "conn-char-minimap-entered",
+	  "arrowHead": "away",
+	  "color": "#a78bfa"
+	},
+	{
+	  "fromTable": "character-on-map-001",
+	  "fromField": 5,
+	  "fromSide": "right",
+	  "toTable": "mini-map-menu-001",
+	  "toField": -1,
+	  "toSide": "left",
+	  "lineStyle": "solid",
+	  "id": "conn-char-minimap-exited",
+	  "arrowHead": "away",
+	  "color": "#a78bfa"
+	},
+	{
+	  "fromTable": "mini-map-menu-001",
+	  "fromField": -1,
+	  "fromSide": "bottom",
+	  "toTable": "map-node-001",
+	  "toField": -1,
+	  "toSide": "top",
+	  "lineStyle": "solid",
+	  "id": "conn-minimap-mapnode",
+	  "arrowHead": "towards"
+	},
+	{
+	  "fromTable": "save-manager-001",
+	  "fromField": -1,
+	  "fromSide": "top",
+	  "toTable": "note-savemanager-bootstrap",
+	  "toField": 0,
+	  "toSide": "bottom",
+	  "lineStyle": "dashed",
+	  "id": "conn-note-savemanager-bootstrap"
+	},
+	{
+	  "fromTable": "map-node-001",
+	  "fromField": 4,
+	  "fromSide": "bottom",
+	  "toTable": "note-mapnode-blocking",
+	  "toField": 0,
+	  "toSide": "top",
+	  "lineStyle": "dashed",
+	  "id": "conn-note-mapnode-blocking"
 	}
   ]
 }

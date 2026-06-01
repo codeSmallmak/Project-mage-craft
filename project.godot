@@ -21,6 +21,7 @@ Globals="*uid://cbjr48720b2af"
 SpellLoader="*uid://dlsid2x7rvws3"
 SpellManager="*uid://dwy5jjsfaeb8t"
 SaveManager="*uid://dl8sfga13q7l7"
+CharacterManager="*uid://bgis3lvpj805t"
 
 [display]
 

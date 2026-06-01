@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c6ynh24t6gj5w" path="res://The Grid/Energy Tray/tray_slot.gd" id="1_285rt"]
 
 [node name="TraySlot" type="Control" unique_id=1501269663]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(12, 12)
 layout_mode = 3
 anchor_right = 0.05
 anchor_bottom = 0.089
@@ -14,8 +14,8 @@ script = ExtResource("1_285rt")
 
 [node name="Panel" type="Panel" parent="." unique_id=184000071]
 layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_right = 12.0
+offset_bottom = 12.0
 mouse_filter = 2
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1297458256]

@@ -24,7 +24,7 @@ func _cell_to_grid_pos(cell) -> Vector2i:
 	var idx = cell.get_index()
 	return Vector2i(idx % 5, idx / 5)
 
-func _cast_spells(matches: Array, grid_state: Dictionary) -> void:
+func _cast_spells(matches: Array, _grid_state: Dictionary) -> void:
 	# Collect all cells to consume across all matches
 	var consumed = {}
 	for match in matches:
