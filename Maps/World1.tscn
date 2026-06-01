@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://l3thkx6fb3l1" path="res://Maps/world_1.gd" id="1_d38im"]
 [ext_resource type="PackedScene" uid="uid://dqflde7168kmy" path="res://Maps/MapCharacter/character_on_map.tscn" id="2_fwudw"]
 [ext_resource type="PackedScene" uid="uid://druclgcriw7eo" path="res://Maps/Nodes/map_node.tscn" id="4_0eof8"]
-[ext_resource type="PackedScene" uid="uid://ovreswmnx6n" path="res://Levels/World1 Levels/SparrowholmForest.tscn" id="5_vhpxx"]
+[ext_resource type="PackedScene" uid="uid://ovreswmnx6n" path="res://Levels/World1 Levels/Sparrowholm Forest/SparrowholmForest.tscn" id="5_vhpxx"]
 [ext_resource type="PackedScene" uid="uid://d75vilmruhos" path="res://Maps/mini_map_menu.tscn" id="6_m621d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7w07"]

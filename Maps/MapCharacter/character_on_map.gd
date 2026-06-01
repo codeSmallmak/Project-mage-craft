@@ -11,8 +11,8 @@ signal node_exited(map_node: MapNode)
 var last_direction: String = "down"
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
-@onready var sprite = %CharacterTexture
+@onready var anim_player: AnimationPlayer = $SharedCharacterAnimations.get_child(1)
+@onready var CharacterTexture =  $SharedCharacterAnimations.get_child(0)
 
 
 func _ready() -> void:
@@ -39,7 +39,7 @@ func _ready() -> void:
 	if char_id >= 0:
 		var char_data = CharacterManager.lookup.get(char_id)
 		if char_data != null:
-			%CharacterTexture.texture = char_data.sprite_sheet
+			CharacterTexture.texture = char_data.sprite_sheet
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var node = area.get_parent()

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ovreswmnx6n"]
+
+[ext_resource type="Script" uid="uid://c0j5andyatfj" path="res://Levels/level.gd" id="1_5ek7a"]
+[ext_resource type="PackedScene" uid="uid://mwjfsglqggh6" path="res://The Grid/spell_grid.tscn" id="2_47xnk"]
+[ext_resource type="Resource" uid="uid://b1tt3pgn7ygi1" path="res://Levels/World1 Levels/Sparrowholm Forest/SparrowholmData.tres" id="2_ifpk6"]
+[ext_resource type="PackedScene" uid="uid://byduuoq2sws30" path="res://Levels/LevelCharacter/level_character.tscn" id="3_ifpk6"]
+
+[node name="SparrowholmForest" type="Node2D" unique_id=1351634210]
+script = ExtResource("1_5ek7a")
+level_data = ExtResource("2_ifpk6")
+
+[node name="SpellGrid" parent="." unique_id=990792362 instance=ExtResource("2_47xnk")]
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = 80.0
+offset_top = 107.0
+offset_right = 244.0
+offset_bottom = 175.0
+grow_vertical = 0
+size_flags_vertical = 10
+
+[node name="LevelCharacter" parent="." unique_id=188334816 instance=ExtResource("3_ifpk6")]
+position = Vector2(88, 56)

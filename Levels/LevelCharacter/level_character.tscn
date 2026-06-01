@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://byduuoq2sws30"]
+
+[ext_resource type="Script" uid="uid://brepme0l7eici" path="res://Levels/LevelCharacter/level_character.gd" id="1_v3jne"]
+[ext_resource type="PackedScene" uid="uid://cg77d34o61bvd" path="res://Characters/shared_char_animations.tscn" id="2_7giya"]
+
+[node name="LevelCharacter" type="Node2D" unique_id=188334816]
+script = ExtResource("1_v3jne")
+
+[node name="SharedCharacterAnimations" parent="." unique_id=1993663465 instance=ExtResource("2_7giya")]
+position = Vector2(0, -7)

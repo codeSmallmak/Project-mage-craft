@@ -27,6 +27,7 @@ CharacterManager="*uid://bgis3lvpj805t"
 
 window/size/viewport_width=320
 window/size/viewport_height=180
+window/size/initial_position_type=3
 window/stretch/mode="viewport"
 
 [editor_plugins]

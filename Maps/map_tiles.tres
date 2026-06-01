@@ -26,12 +26,6 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_n5y6g"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-agent_radius = 0.0
-
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xuda2"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
@@ -57,12 +51,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_a82n7"]
-vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
-agent_radius = 0.0
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_sbjhq"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
@@ -347,7 +335,7 @@ texture = ExtResource("1_iig3s")
 21:7/0 = 0
 21:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_iig3s")
 22:7/0 = 0
-22:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_n5y6g")
+22:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_datr4")
 23:7/0 = 0
 24:7/0 = 0
 25:7/0 = 0
@@ -442,7 +430,7 @@ texture = ExtResource("1_iig3s")
 24:9/0 = 0
 24:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_67p0u")
 25:9/0 = 0
-25:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_sbjhq")
+25:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_a82n7")
 26:9/0 = 0
 26:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_a82n7")
 27:9/0 = 0

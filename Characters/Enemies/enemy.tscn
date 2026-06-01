@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cscd4sr5vpyqx"]
+
+[ext_resource type="Script" uid="uid://bsf7c2hc2d825" path="res://Characters/Enemies/enemy.gd" id="1_c7bj6"]
+[ext_resource type="SpriteFrames" uid="uid://cg5cyvrg8v8eg" path="res://Characters/Enemies/Slime/slime_frames.tres" id="2_o8ynm"]
+
+[node name="Enemy" type="Node2D" unique_id=1900469819]
+script = ExtResource("1_c7bj6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=858728439]
+sprite_frames = ExtResource("2_o8ynm")
+animation = &"walk"
+frame_progress = 0.41432825
