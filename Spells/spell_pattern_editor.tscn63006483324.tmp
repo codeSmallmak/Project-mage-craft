@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://b2ircykhyr8gi"]
+
+[ext_resource type="Script" uid="uid://vt8252q3l3bc" path="res://Spells/spell_pattern_editor.gd" id="1_oy2rv"]
+
+[node name="SpellPatternEditor" type="Control" unique_id=206303886]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oy2rv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=470283517]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.18039216, 0.3137255, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1070724536]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_right = 66.0
+offset_bottom = 31.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="BackButton" type="Button" parent="HBoxContainer" unique_id=1971131345]
+unique_name_in_owner = true
+layout_mode = 2
+text = "<"
+
+[node name="SpellNameDisplay" type="Label" parent="HBoxContainer" unique_id=989826662]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Spell Name"
+
+[node name="ForwardButton" type="Button" parent="HBoxContainer" unique_id=903408623]
+unique_name_in_owner = true
+layout_mode = 2
+text = ">"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1132226869]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -58.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer2" unique_id=1102745336]
+layout_mode = 2
+columns = 5
+
+[node name="Button" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1893380434]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button2" type="Button" parent="HBoxContainer2/GridContainer" unique_id=548397146]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button3" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1151585957]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button4" type="Button" parent="HBoxContainer2/GridContainer" unique_id=578374596]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button5" type="Button" parent="HBoxContainer2/GridContainer" unique_id=679472994]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button6" type="Button" parent="HBoxContainer2/GridContainer" unique_id=179726606]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button7" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1392766699]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button8" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1203104514]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button9" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1164784072]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button10" type="Button" parent="HBoxContainer2/GridContainer" unique_id=457971822]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button11" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1434890857]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button12" type="Button" parent="HBoxContainer2/GridContainer" unique_id=984912136]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button13" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1838664618]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button14" type="Button" parent="HBoxContainer2/GridContainer" unique_id=313874881]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button15" type="Button" parent="HBoxContainer2/GridContainer" unique_id=413852215]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button16" type="Button" parent="HBoxContainer2/GridContainer" unique_id=376118084]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button17" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1111081026]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button18" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1165252229]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button19" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1582133181]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button20" type="Button" parent="HBoxContainer2/GridContainer" unique_id=726531344]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button21" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1593639371]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button22" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1472286245]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button23" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1061853496]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button24" type="Button" parent="HBoxContainer2/GridContainer" unique_id=1919577902]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Button25" type="Button" parent="HBoxContainer2/GridContainer" unique_id=19005967]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2" unique_id=230408551]
+layout_mode = 2
+
+[node name="EnergyBtn" type="Button" parent="HBoxContainer2/VBoxContainer" unique_id=822126838]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Energy name"
+
+[node name="SaveBtn" type="Button" parent="HBoxContainer2/VBoxContainer" unique_id=313233897]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Save"

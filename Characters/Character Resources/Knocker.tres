@@ -11,6 +11,6 @@ display_name = "Knocker"
 sprite_sheet = ExtResource("3_txti6")
 lore = "*RATTLE*"
 base_hp = 100
-starting_energies = Array[int]([8, 1, 9])
+starting_energies = Array[int]([1])
 available_energies = Array[int]([8])
 metadata/_custom_type_script = "uid://dleei3nj43cis"

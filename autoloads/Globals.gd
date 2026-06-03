@@ -1,3 +1,4 @@
+#Globals.gd
 extends Node
 
 enum EnergyType {

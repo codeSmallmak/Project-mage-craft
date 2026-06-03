@@ -5,6 +5,10 @@ var chunks := []
 var active_chunks: Array[Node2D] = []
 var scrolling: bool = true
 
+@onready var player = $LevelCharacter
+@onready var stop_marker = $StopPosition
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	chunks = level_data.chunk_scenes
@@ -42,5 +46,16 @@ func _spawn_enemy() -> void:
 	var entry = table.pick_random()
 	var enemy = entry.enemy_scene.instantiate()
 	enemy.enemy_data = entry.enemy_info
-	enemy.position = Vector2(660, 40)
+	enemy.position = Vector2(360, 40)
+	enemy.stop_position = stop_marker.position.x
+	enemy.player = player  # <-- pass player ref
+	enemy.reached_position.connect(func(): fight_start())
+	enemy.died.connect(func(): scrolling = true)
 	add_child(enemy)
+
+
+func fight_start() -> void:
+	print("fight_start called")
+	scrolling = false
+	player.stop_walking()
+	print("player.stop_walking() called")

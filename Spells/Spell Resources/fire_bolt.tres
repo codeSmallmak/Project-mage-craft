@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="SpellData" format=3 uid="uid://b6v7qte6wgau3"]
+[gd_resource type="Resource" script_class="SpellData" format=3 uid="uid://co3dda1kgj074"]
 
+[ext_resource type="PackedScene" uid="uid://gbubfi8sbau1" path="res://Spells/Spell Instances/projectile.tscn" id="1_8i58f"]
 [ext_resource type="Script" uid="uid://ccokhdmbnt0lh" path="res://Spells/spell_data.gd" id="1_d35mh"]
 
 [resource]
@@ -8,6 +9,7 @@ id = "0c1a78ab-7269-492f-bdb7-61222960e210-spell"
 display_name = "Fire Bolt"
 unlocked = true
 damage = 2
-rotations = "2way"
-slots = [0, 0, 1, 1, 0, 1, 2, 0, 1]
+cast_animation = "casting1"
+projectile_scene = ExtResource("1_8i58f")
+pattern = [[1, 1, 1]]
 metadata/_custom_type_script = "uid://ccokhdmbnt0lh"

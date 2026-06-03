@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cg77d34o61bvd"]
 
 [ext_resource type="Texture2D" uid="uid://bdqiflnlodqn1" path="res://Characters/PrincessPlayer.png" id="1_innhd"]
+[ext_resource type="Script" uid="uid://dwq6kjtafywf0" path="res://Characters/shared_char_animations.gd" id="1_wsm6j"]
 
 [sub_resource type="Animation" id="Animation_ofibx"]
 resource_name = "IdleDown"
@@ -148,6 +149,51 @@ tracks/0/keys = {
 "values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3)]
 }
 
+[sub_resource type="Animation" id="Animation_wsm6j"]
+resource_name = "casting1"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterTexture:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(5, 6), Vector2i(6, 6), Vector2i(7, 6)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.45484477),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_emit_projectile_ready"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_f8p00"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterTexture:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(4, 6)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_innhd"]
 _data = {
 &"IdleDown": SubResource("Animation_ofibx"),
@@ -158,10 +204,13 @@ _data = {
 &"WalkDown": SubResource("Animation_2yu8s"),
 &"WalkLeft": SubResource("Animation_q335c"),
 &"WalkRight": SubResource("Animation_wodup"),
-&"WalkUp": SubResource("Animation_r8vks")
+&"WalkUp": SubResource("Animation_r8vks"),
+&"casting1": SubResource("Animation_wsm6j"),
+&"hit": SubResource("Animation_f8p00")
 }
 
 [node name="SharedCharacterAnimations" type="Node2D" unique_id=1993663465]
+script = ExtResource("1_wsm6j")
 
 [node name="CharacterTexture" type="Sprite2D" parent="." unique_id=505822449]
 texture = ExtResource("1_innhd")

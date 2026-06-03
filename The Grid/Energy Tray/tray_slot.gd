@@ -1,21 +1,23 @@
+# EnergyTray.gd
 extends Control
-
 const EnergyOrbScene = preload("res://The Grid/Energy Orbs/energy_orb.tscn")
-
 var occupied: bool = false
 
 func _ready() -> void:
 	await get_tree().process_frame
 	spawn_orb()
 
+# Spawn a random unlocked energy orb into this tray slot
 func spawn_orb() -> void:
 	if occupied:
 		return
 	if not is_inside_tree():
 		return
+	
 	var unlocked = SaveManager.save_data.get("unlocked_energies", [])
 	if unlocked.is_empty():
 		return
+	
 	var random_type = unlocked[randi() % unlocked.size()]
 	var inst = EnergyOrbScene.instantiate()
 	inst.energy_type = random_type
@@ -25,6 +27,7 @@ func spawn_orb() -> void:
 	inst.set_deferred("global_position", global_position + inst.size / 2)
 	inst.pivot_offset = inst.size / 2
 	occupied = true
+	
 	await get_tree().process_frame
 	var tween = inst.create_tween()
 	tween.tween_property(inst, "scale", Vector2.ONE, 0.3)
