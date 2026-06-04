@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpellData" format=3 uid="uid://dj5sp8hynlo1v"]
+
+[ext_resource type="PackedScene" uid="uid://0fkhgiptfv2d" path="res://Spells/Spell Instances/seeking_orb.tscn" id="1_0due1"]
+[ext_resource type="Script" uid="uid://ccokhdmbnt0lh" path="res://Spells/spell_data.gd" id="1_dqyke"]
+[ext_resource type="SpriteFrames" uid="uid://xhthd4hywfyk" path="res://Spells/Spell Animations/shadow_orb.tres" id="3_r3dp1"]
+
+[resource]
+script = ExtResource("1_dqyke")
+id = "e106fc21-40b8-4c80-a703-25ae4f1318f2-spell"
+display_name = "Shadow Orb"
+unlocked = true
+spell_type = 1
+spell_sprite_frames = ExtResource("3_r3dp1")
+damage_min = 2
+damage_max = 4
+crit_chance = 5
+cast_animation = "casting1"
+projectile_scene = ExtResource("1_0due1")
+impact_fx = 1
+pattern = [[-1, 8, -1], [8, -1, 8], [-1, 8, -1]]
+orb_count_max = 5
+metadata/_custom_type_script = "uid://ccokhdmbnt0lh"

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpellData" format=3 uid="uid://wquegnhmpqe5"]
+
+[ext_resource type="PackedScene" uid="uid://gbubfi8sbau1" path="res://Spells/Spell Instances/projectile.tscn" id="1_vsyxa"]
+[ext_resource type="Script" uid="uid://ccokhdmbnt0lh" path="res://Spells/spell_data.gd" id="2_ne8x7"]
+[ext_resource type="SpriteFrames" uid="uid://2mjc2a5k6rkt" path="res://Spells/Spell Animations/twig_shot.tres" id="3_ne8x7"]
+
+[resource]
+script = ExtResource("2_ne8x7")
+display_name = "Twig Shot"
+unlocked = true
+spell_sprite_frames = ExtResource("3_ne8x7")
+damage_min = 4
+damage_max = 10
+crit_chance = 20
+cast_animation = "casting1"
+projectile_scene = ExtResource("1_vsyxa")
+impact_fx = 1
+pattern = [[4, 4, 4]]
+orb_count_min = 0
+orb_count_max = 0
+metadata/_custom_type_script = "uid://ccokhdmbnt0lh"

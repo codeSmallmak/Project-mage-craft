@@ -20,4 +20,5 @@ metadata/_custom_type_script = "uid://c8sa03mhew5we"
 script = ExtResource("1_tve38")
 chunk_scenes = Array[PackedScene]([ExtResource("1_srt6g"), ExtResource("2_uwong"), ExtResource("3_015s3"), ExtResource("4_pinb8"), ExtResource("5_5gtyy")])
 spawn_table = Array[ExtResource("7_c7jl8")]([SubResource("Resource_ho5x7")])
+max_encounters = 8
 metadata/_custom_type_script = "uid://cdi3qjxnfqqmg"

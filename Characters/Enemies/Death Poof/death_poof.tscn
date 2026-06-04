@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://jj63imaf8gye"]
+
+[ext_resource type="Texture2D" uid="uid://c5lx4c7iyjc5l" path="res://Characters/Enemies/Death Poof/DeathSmoke.png" id="1_eaiab"]
+[ext_resource type="Script" uid="uid://2c5ohp3qr4qq" path="res://Characters/Enemies/Death Poof/death_poof.gd" id="1_s7520"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7520"]
+atlas = ExtResource("1_eaiab")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by40x"]
+atlas = ExtResource("1_eaiab")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfvkm"]
+atlas = ExtResource("1_eaiab")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t4r5"]
+atlas = ExtResource("1_eaiab")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2e8h"]
+atlas = ExtResource("1_eaiab")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gahu4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7520")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by40x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfvkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t4r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2e8h")
+}],
+"loop": false,
+"name": &"poof",
+"speed": 12.0
+}]
+
+[node name="DeathPoof" type="Node2D" unique_id=939104324]
+script = ExtResource("1_s7520")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1341900182]
+sprite_frames = SubResource("SpriteFrames_gahu4")
+animation = &"poof"
+frame = 4
+frame_progress = 1.0

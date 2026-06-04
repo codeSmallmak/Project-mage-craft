@@ -4,8 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://mwjfsglqggh6" path="res://The Grid/spell_grid.tscn" id="2_47xnk"]
 [ext_resource type="Resource" uid="uid://b1tt3pgn7ygi1" path="res://Levels/World1 Levels/Sparrowholm Forest/SparrowholmData.tres" id="2_ifpk6"]
 [ext_resource type="PackedScene" uid="uid://byduuoq2sws30" path="res://Levels/LevelCharacter/level_character.tscn" id="3_ifpk6"]
+[ext_resource type="Script" uid="uid://dpyxb5tgfglg0" path="res://Maps/Nodes/map_node.gd" id="5_ifpk6"]
+[ext_resource type="FontFile" uid="uid://do4oonkjap40c" path="res://fonts/Tiny5-Regular.ttf" id="6_f6tgv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6tgv"]
+bg_color = Color(1, 0.07450981, 0.1254902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 2
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 2
 
 [node name="SparrowholmForest" type="Node2D" unique_id=1351634210]
+y_sort_enabled = true
 script = ExtResource("1_5ek7a")
 level_data = ExtResource("2_ifpk6")
 
@@ -20,7 +30,89 @@ grow_vertical = 0
 size_flags_vertical = 10
 
 [node name="LevelCharacter" parent="." unique_id=188334816 instance=ExtResource("3_ifpk6")]
-position = Vector2(88, 56)
+y_sort_enabled = true
+position = Vector2(88, 64)
 
-[node name="StopPosition" type="Marker2D" parent="." unique_id=138082744]
-position = Vector2(232, 56)
+[node name="StopPositions" type="Node2D" parent="." unique_id=410839158]
+
+[node name="Row0Col0" type="Marker2D" parent="StopPositions" unique_id=138082744]
+position = Vector2(216, 48)
+
+[node name="Row0Col1" type="Marker2D" parent="StopPositions" unique_id=1371786445]
+position = Vector2(248, 48)
+
+[node name="Row0Col2" type="Marker2D" parent="StopPositions" unique_id=249040744]
+position = Vector2(280, 48)
+
+[node name="Row1Col0" type="Marker2D" parent="StopPositions" unique_id=467807297]
+position = Vector2(216, 64)
+
+[node name="Row1Col1" type="Marker2D" parent="StopPositions" unique_id=1423970622]
+position = Vector2(248, 64)
+
+[node name="Row1Col2" type="Marker2D" parent="StopPositions" unique_id=524130223]
+position = Vector2(280, 64)
+
+[node name="Row2Col0" type="Marker2D" parent="StopPositions" unique_id=2093234481]
+position = Vector2(216, 80)
+
+[node name="Row2Col1" type="Marker2D" parent="StopPositions" unique_id=1895383924]
+position = Vector2(248, 80)
+
+[node name="Row2Col2" type="Marker2D" parent="StopPositions" unique_id=1938145540]
+position = Vector2(280, 80)
+
+[node name="PlayerLanes" type="Node2D" parent="." unique_id=1145807589]
+script = ExtResource("5_ifpk6")
+metadata/_custom_type_script = "uid://dpyxb5tgfglg0"
+
+[node name="LaneTop" type="Marker2D" parent="PlayerLanes" unique_id=1990540204]
+position = Vector2(88, 48)
+
+[node name="LaneMid" type="Marker2D" parent="PlayerLanes" unique_id=2075506713]
+position = Vector2(88, 64)
+
+[node name="LaneBot" type="Marker2D" parent="PlayerLanes" unique_id=324584976]
+position = Vector2(88, 80)
+
+[node name="PlayerHUD" type="CanvasLayer" parent="." unique_id=1660009249]
+
+[node name="HUDMargin" type="MarginContainer" parent="PlayerHUD" unique_id=1674967043]
+offset_right = 59.0
+offset_bottom = 23.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+
+[node name="HPPanel" type="PanelContainer" parent="PlayerHUD/HUDMargin" unique_id=517161942]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HPMargin" type="MarginContainer" parent="PlayerHUD/HUDMargin/HPPanel" unique_id=1748370320]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HPContainer" type="HBoxContainer" parent="PlayerHUD/HUDMargin/HPPanel/HPMargin" unique_id=1280479332]
+layout_mode = 2
+
+[node name="HPLabel" type="Label" parent="PlayerHUD/HUDMargin/HPPanel/HPMargin/HPContainer" unique_id=1141834951]
+layout_mode = 2
+theme_override_constants/line_spacing = 4
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_f6tgv")
+theme_override_font_sizes/font_size = 7
+text = "HP: "
+horizontal_alignment = 1
+
+[node name="HPBar" type="ProgressBar" parent="PlayerHUD/HUDMargin/HPPanel/HPMargin/HPContainer" unique_id=1623402292]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_f6tgv")
+theme_override_font_sizes/font_size = 7
+theme_override_styles/fill = SubResource("StyleBoxFlat_f6tgv")
+value = 100.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7scea3yxdulc"
-path="res://.godot/imported/Spell Projectiles Sprite Sheet.png-f6b09b9a50ff7ed0b7b7eebc67a929c9.ctex"
+uid="uid://cajdso30vo74x"
+path="res://.godot/imported/twig_shot.png-cadfe638357ac513665a1cedb4463300.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Spells/Spell Animations/Spell Projectiles Sprite Sheet.png"
-dest_files=["res://.godot/imported/Spell Projectiles Sprite Sheet.png-f6b09b9a50ff7ed0b7b7eebc67a929c9.ctex"]
+source_file="res://Spells/Spell Animations/twig_shot.png"
+dest_files=["res://.godot/imported/twig_shot.png-cadfe638357ac513665a1cedb4463300.ctex"]
 
 [params]
 

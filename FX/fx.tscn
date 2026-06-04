@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ccl7ecmusl8gy"]
+
+[ext_resource type="Script" uid="uid://cad04u0rgtpal" path="res://FX/fx.gd" id="1_a1uxp"]
+
+[node name="Fx" type="Node2D" unique_id=1257778756]
+z_index = 2
+script = ExtResource("1_a1uxp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=13591941]

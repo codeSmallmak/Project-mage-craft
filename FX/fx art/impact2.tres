@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bnl8dqlxis44p"]
+
+[ext_resource type="Texture2D" uid="uid://bhcyo7456mnn3" path="res://FX/fx art/impact2.png" id="1_v18ys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u30d"]
+atlas = ExtResource("1_v18ys")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poc05"]
+atlas = ExtResource("1_v18ys")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0bn4"]
+atlas = ExtResource("1_v18ys")
+region = Rect2(128, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u30d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poc05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0bn4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]

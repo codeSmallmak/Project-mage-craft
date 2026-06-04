@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://xhthd4hywfyk"]
+
+[ext_resource type="Texture2D" uid="uid://8778r6m7q655" path="res://Spells/Spell Animations/shadow_orb.png" id="1_bh4kr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woirm"]
+atlas = ExtResource("1_bh4kr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il0ko"]
+atlas = ExtResource("1_bh4kr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfpey"]
+atlas = ExtResource("1_bh4kr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ey3p6"]
+atlas = ExtResource("1_bh4kr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6tf5"]
+atlas = ExtResource("1_bh4kr")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xjbn"]
+atlas = ExtResource("1_bh4kr")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck8l4"]
+atlas = ExtResource("1_bh4kr")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55pli"]
+atlas = ExtResource("1_bh4kr")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woirm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il0ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfpey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ey3p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6tf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xjbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck8l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55pli")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]

@@ -1,46 +1,43 @@
 [gd_scene format=3 uid="uid://gbubfi8sbau1"]
 
 [ext_resource type="Script" uid="uid://dap42dt4fwsdp" path="res://Spells/Spell Instances/projectile.gd" id="1_e10ha"]
-[ext_resource type="Texture2D" uid="uid://c7scea3yxdulc" path="res://Spells/Spell Animations/Spell Projectiles Sprite Sheet.png" id="1_fegfa"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e10ha"]
-atlas = ExtResource("1_fegfa")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://bi8hue4sxd3c8" path="res://Spells/Spell Animations/fire_projectile.png" id="2_e10ha"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4f3l2"]
-atlas = ExtResource("1_fegfa")
-region = Rect2(32, 0, 32, 32)
+atlas = ExtResource("2_e10ha")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l86a4"]
-atlas = ExtResource("1_fegfa")
-region = Rect2(64, 0, 32, 32)
+atlas = ExtResource("2_e10ha")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bc4r"]
-atlas = ExtResource("1_fegfa")
-region = Rect2(96, 0, 32, 32)
+atlas = ExtResource("2_e10ha")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hsuy0"]
-atlas = ExtResource("1_fegfa")
-region = Rect2(128, 0, 32, 32)
+atlas = ExtResource("2_e10ha")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kd4q7"]
-atlas = ExtResource("1_fegfa")
-region = Rect2(160, 0, 32, 32)
+atlas = ExtResource("2_e10ha")
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66ccg"]
-atlas = ExtResource("1_fegfa")
-region = Rect2(192, 0, 32, 32)
+atlas = ExtResource("2_e10ha")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ee6xv"]
-atlas = ExtResource("1_fegfa")
+atlas = ExtResource("2_e10ha")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pty6x"]
+atlas = ExtResource("2_e10ha")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pty6x"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e10ha")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4f3l2")
 }, {
@@ -61,10 +58,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ee6xv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pty6x")
 }],
 "loop": true,
-"name": &"default",
-"speed": 12.0
+"name": &"new_animation",
+"speed": 17.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4f3l2"]
@@ -75,7 +75,8 @@ script = ExtResource("1_e10ha")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1788786361]
 sprite_frames = SubResource("SpriteFrames_pty6x")
-frame_progress = 0.36175928
+animation = &"new_animation"
+frame_progress = 0.23929363
 
 [node name="Area2D" type="Area2D" parent="." unique_id=985998123]
 

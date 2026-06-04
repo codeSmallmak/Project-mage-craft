@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_dswhg")
+id = "5b92a549-84db-4d39-a3b1-416cab330fc5-spell"
 display_name = "Blood Puddle"
 unlocked = true
-damage = 2
 pattern = [[-1, 9, -1], [9, -1, 9], [-1, 9, -1]]
 metadata/_custom_type_script = "uid://ccokhdmbnt0lh"

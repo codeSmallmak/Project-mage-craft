@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://0fkhgiptfv2d"]
+
+[ext_resource type="Script" uid="uid://cq1vc821y8eq8" path="res://Spells/Spell Instances/seeking_orb.gd" id="1_ok3ct"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ok3ct"]
+
+[node name="SeekingOrb" type="Node2D" unique_id=1085807253]
+script = ExtResource("1_ok3ct")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1092561599]
+sprite_frames = SubResource("SpriteFrames_ok3ct")

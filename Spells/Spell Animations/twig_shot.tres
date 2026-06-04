@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://2mjc2a5k6rkt"]
+
+[ext_resource type="Texture2D" uid="uid://cajdso30vo74x" path="res://Spells/Spell Animations/twig_shot.png" id="1_q57xi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu3xa"]
+atlas = ExtResource("1_q57xi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_voa1i"]
+atlas = ExtResource("1_q57xi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dpc7"]
+atlas = ExtResource("1_q57xi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36h5p"]
+atlas = ExtResource("1_q57xi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0q26"]
+atlas = ExtResource("1_q57xi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai20l"]
+atlas = ExtResource("1_q57xi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfgyp"]
+atlas = ExtResource("1_q57xi")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g8ye"]
+atlas = ExtResource("1_q57xi")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu3xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voa1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dpc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36h5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0q26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai20l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfgyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g8ye")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
