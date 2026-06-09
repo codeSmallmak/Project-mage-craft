@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("2_ne8x7")
+id = "3ba74eb1-9499-4ce3-badf-27b732a66836-spell"
 display_name = "Twig Shot"
 unlocked = true
 spell_sprite_frames = ExtResource("3_ne8x7")

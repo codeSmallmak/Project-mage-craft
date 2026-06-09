@@ -30,7 +30,6 @@ grow_vertical = 0
 size_flags_vertical = 10
 
 [node name="LevelCharacter" parent="." unique_id=188334816 instance=ExtResource("3_ifpk6")]
-y_sort_enabled = true
 position = Vector2(88, 64)
 
 [node name="StopPositions" type="Node2D" parent="." unique_id=410839158]

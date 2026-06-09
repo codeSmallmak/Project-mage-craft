@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cubpphikcq616"
-path="res://.godot/imported/Slimes.png-1003db2431489b89e5d864e6f4a5ba08.ctex"
+uid="uid://c7irqw73d1ebr"
+path="res://.godot/imported/rootmother_sprites.png-b15ba32675acda722b56e9b0ef80a128.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Slime/Slimes.png"
-dest_files=["res://.godot/imported/Slimes.png-1003db2431489b89e5d864e6f4a5ba08.ctex"]
+source_file="res://Characters/BOSSES/RootMother/rootmother_sprites.png"
+dest_files=["res://.godot/imported/rootmother_sprites.png-b15ba32675acda722b56e9b0ef80a128.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g8midyp1nral"
-path="res://.godot/imported/Slime_Large_Idle.png-c628755c8fb86ded930abe5f477df75f.ctex"
+uid="uid://cubpphikcq616"
+path="res://.godot/imported/Slimes.png-6328e76f901261d40c48e491c5dfa83e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Slime/Slime_Large_Idle.png"
-dest_files=["res://.godot/imported/Slime_Large_Idle.png-c628755c8fb86ded930abe5f477df75f.ctex"]
+source_file="res://Characters/Enemies/Dash Enemies/Slime/Slimes.png"
+dest_files=["res://.godot/imported/Slimes.png-6328e76f901261d40c48e491c5dfa83e.ctex"]
 
 [params]
 

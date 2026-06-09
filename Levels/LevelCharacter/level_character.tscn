@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cg77d34o61bvd" path="res://Characters/shared_char_animations.tscn" id="2_7giya"]
 
 [node name="LevelCharacter" type="Node2D" unique_id=188334816]
+y_sort_enabled = true
 script = ExtResource("1_v3jne")
 
 [node name="SharedCharacterAnimations" parent="." unique_id=1993663465 instance=ExtResource("2_7giya")]
+y_sort_enabled = true
 position = Vector2(0, -7)

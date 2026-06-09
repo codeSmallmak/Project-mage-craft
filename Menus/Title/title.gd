@@ -20,7 +20,7 @@ func _on_new_game() -> void:
 
 func _on_load_game() -> void:
 	SaveManager.read()
-	get_tree().change_scene_to_file("res://Game/game.tscn")
+	get_tree().change_scene_to_file("res://Game/World1.tscn")
 
 func _on_exit() -> void:
 	get_tree().quit()

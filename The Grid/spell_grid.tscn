@@ -22,6 +22,10 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="spacer5" type="Control" parent="." unique_id=1281625759]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="EnergyTray" type="GridContainer" parent="." unique_id=1665753684]
 unique_name_in_owner = true
 layout_mode = 2
@@ -44,7 +48,6 @@ layout_mode = 2
 
 [node name="spacer2" type="Control" parent="." unique_id=1833628468]
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="VSeparator" type="VSeparator" parent="." unique_id=22574492]
 custom_minimum_size = Vector2(0, 64)
@@ -55,12 +58,11 @@ size_flags_stretch_ratio = 0.0
 
 [node name="spacer3" type="Control" parent="." unique_id=1119580699]
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="CellGrid" type="GridContainer" parent="." unique_id=493370433]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/h_separation = 16
+theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 2
 columns = 5
 
@@ -140,5 +142,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="spacer4" type="Control" parent="." unique_id=1412800346]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spacer6" type="Control" parent="." unique_id=1353372295]
 layout_mode = 2
 size_flags_horizontal = 3

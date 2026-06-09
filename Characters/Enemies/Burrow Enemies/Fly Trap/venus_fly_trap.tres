@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://w0e1ky7tjtoq"]
+
+[ext_resource type="Script" uid="uid://6amtd8bc86bh" path="res://Characters/Enemies/Enemy Attacks/attack_data.gd" id="1_buxfw"]
+[ext_resource type="Script" uid="uid://b1arkdxjipwgk" path="res://Loot/loot_entry.gd" id="1_itqj6"]
+[ext_resource type="Script" uid="uid://oyh0o52vxwcs" path="res://Characters/Enemies/enemy_data.gd" id="2_y3ih2"]
+[ext_resource type="SpriteFrames" uid="uid://d4erisn2bmgye" path="res://Characters/Enemies/Burrow Enemies/Fly Trap/fly_trap_frames.tres" id="3_he2sl"]
+[ext_resource type="Texture2D" uid="uid://c7b8tphgq4w3g" path="res://Characters/Enemies/Burrow Enemies/Fly Trap/venus_fly_trap.png" id="4_buxfw"]
+
+[sub_resource type="Resource" id="Resource_jbei3"]
+script = ExtResource("1_buxfw")
+id = "burrow"
+display_name = "burrow"
+animation = "attack"
+impact_frame = 9
+damage_min = 8
+damage_max = 10
+impact_fx = 1
+attack_x_offset = 32.0
+metadata/_custom_type_script = "uid://6amtd8bc86bh"
+
+[resource]
+script = ExtResource("2_y3ih2")
+display_name = "Fly Trap"
+sprite_sheet = ExtResource("4_buxfw")
+sprite_frames = ExtResource("3_he2sl")
+hp = 12
+attack_interval = 4.0
+attacks = Array[ExtResource("1_buxfw")]([SubResource("Resource_jbei3")])
+metadata/_custom_type_script = "uid://oyh0o52vxwcs"

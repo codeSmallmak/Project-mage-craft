@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bhpn3hemb6wc5"]
+
+[ext_resource type="Script" uid="uid://ddeiqsd2ntidj" path="res://Characters/Enemies/Burrow Enemies/enemy_burrow.gd" id="1_qyupy"]
+[ext_resource type="PackedScene" uid="uid://jj63imaf8gye" path="res://Characters/Enemies/Death Poof/death_poof.tscn" id="2_3ub81"]
+[ext_resource type="SpriteFrames" uid="uid://d4erisn2bmgye" path="res://Characters/Enemies/Burrow Enemies/Fly Trap/fly_trap_frames.tres" id="2_qyupy"]
+[ext_resource type="PackedScene" uid="uid://ci7rt6kc7jri1" path="res://FX/damage_number.tscn" id="3_0e3nt"]
+
+[node name="EnemyBurrow" type="Node2D" unique_id=1702732945]
+y_sort_enabled = true
+script = ExtResource("1_qyupy")
+death_poof = ExtResource("2_3ub81")
+damage_number_scene = ExtResource("3_0e3nt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1916517645]
+y_sort_enabled = true
+sprite_frames = ExtResource("2_qyupy")
+animation = &"attack"
+frame = 15
+frame_progress = 1.0
+offset = Vector2(0, -32)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1418295579]
+z_index = 1
+y_sort_enabled = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+rounded = true
+show_percentage = false
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=593307687]
+z_index = 1
+y_sort_enabled = true
+offset_left = -16.0
+offset_top = -40.0
+offset_right = 16.0
+offset_bottom = -36.0
+rounded = true
+show_percentage = false

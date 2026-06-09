@@ -6,22 +6,43 @@ extends Resource
 @export var sprite_sheet: Texture2D
 @export var sprite_frames: SpriteFrames
 @export var hp: int
-@export var attack_impact_fx: Globals.FXType = Globals.FXType.IMPACT1
-@export var attack_damage_min: int
-@export var attack_damage_max: int
-@export var attack_interval: float
-@export var attack_impact_frame: int = 0  # Which frame triggers the hit
-@export var attack_range_above: int = 0
-@export var attack_range_below: int = 0
-@export var allowed_lanes: Array[int] = [0, 1, 2]
+@export var can_shuffle: bool = false
+
+@export_group("Attack")
+@export var attack_interval: float = 1.0
+@export var attacks: Array[AttackData] = []
+
+@export_group("Boss")
 @export var is_boss := false
+@export var boss_name: String = ""
+@export var boss_title: String = ""
+@export var boss_loot_table: Array[LootEntry] = []
+@export var boss_lane: int = -1
 
-func roll_damage() -> int:
-	return randi_range(attack_damage_min, attack_damage_max)
+func roll_attack() -> AttackData:
+	if attacks.is_empty():
+		return null
+	var total: float = 0.0
+	for a in attacks:
+		total += a.weight
+	var roll := randf() * total
+	var cumulative: float = 0.0
+	for a in attacks:
+		cumulative += a.weight
+		if roll <= cumulative:
+			return a
+	return attacks.back()
 
-func get_attack_lanes(enemy_lane: int) -> Array[int]:
-	var hit_lanes: Array[int] = []
-	for i in range(enemy_lane - attack_range_above, enemy_lane + attack_range_below + 1):
-		if i >= 0 and i <= 2:
-			hit_lanes.append(i)
-	return hit_lanes
+func roll_loot() -> LootEntry:
+	if boss_loot_table.is_empty():
+		return null
+	var total_weight: float = 0.0
+	for entry in boss_loot_table:
+		total_weight += entry.weight
+	var roll := randf() * total_weight
+	var cumulative: float = 0.0
+	for entry in boss_loot_table:
+		cumulative += entry.weight
+		if roll <= cumulative:
+			return entry
+	return boss_loot_table.back()

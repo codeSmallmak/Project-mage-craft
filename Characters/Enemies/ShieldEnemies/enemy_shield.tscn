@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cxc73rt6mykse"]
+
+[ext_resource type="Script" uid="uid://b4568hr1nk5uk" path="res://Characters/Enemies/ShieldEnemies/enemy_shield.gd" id="1_q8bbq"]
+[ext_resource type="SpriteFrames" uid="uid://b8m4efb1ho5ul" path="res://Characters/Enemies/ShieldEnemies/Leafy/leafy_frames.tres" id="2_4wj1u"]
+[ext_resource type="PackedScene" uid="uid://jj63imaf8gye" path="res://Characters/Enemies/Death Poof/death_poof.tscn" id="2_od7py"]
+[ext_resource type="PackedScene" uid="uid://ci7rt6kc7jri1" path="res://FX/damage_number.tscn" id="3_dpf0h"]
+
+[node name="EnemyShield" type="Node2D" unique_id=457227264]
+y_sort_enabled = true
+script = ExtResource("1_q8bbq")
+death_poof = ExtResource("2_od7py")
+damage_number_scene = ExtResource("3_dpf0h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1962041475]
+y_sort_enabled = true
+sprite_frames = ExtResource("2_4wj1u")
+animation = &"attack"
+frame = 3
+frame_progress = 1.0
+offset = Vector2(0, -17)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=687629941]
+z_index = 1
+y_sort_enabled = true
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
+offset_bottom = -28.0
+rounded = true
+show_percentage = false
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=645064147]
+z_index = 1
+y_sort_enabled = true
+offset_left = -16.0
+offset_top = -40.0
+offset_right = 16.0
+offset_bottom = -36.0
+rounded = true
+show_percentage = false

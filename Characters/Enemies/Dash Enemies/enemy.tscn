@@ -1,31 +1,42 @@
 [gd_scene format=3 uid="uid://cscd4sr5vpyqx"]
 
-[ext_resource type="Script" uid="uid://bsf7c2hc2d825" path="res://Characters/Enemies/enemy.gd" id="1_c7bj6"]
-[ext_resource type="SpriteFrames" uid="uid://cg5cyvrg8v8eg" path="res://Characters/Enemies/Slime/slime_frames.tres" id="2_o8ynm"]
+[ext_resource type="Script" uid="uid://bsf7c2hc2d825" path="res://Characters/Enemies/Dash Enemies/enemy.gd" id="1_c7bj6"]
+[ext_resource type="SpriteFrames" uid="uid://cg5cyvrg8v8eg" path="res://Characters/Enemies/Dash Enemies/Slime/slime_frames.tres" id="2_o8ynm"]
 [ext_resource type="PackedScene" uid="uid://jj63imaf8gye" path="res://Characters/Enemies/Death Poof/death_poof.tscn" id="2_oooen"]
 [ext_resource type="PackedScene" uid="uid://ci7rt6kc7jri1" path="res://FX/damage_number.tscn" id="3_p6hek"]
 
 [node name="Enemy" type="Node2D" unique_id=1900469819 groups=["enemies"]]
 y_sort_enabled = true
 script = ExtResource("1_c7bj6")
-stop_position = null
 death_poof = ExtResource("2_oooen")
 damage_number_scene = ExtResource("3_p6hek")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=858728439]
+y_sort_enabled = true
 sprite_frames = ExtResource("2_o8ynm")
-animation = &"attack"
+animation = &"walk"
 offset = Vector2(0, -17)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=88333739]
+z_index = 1
+y_sort_enabled = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
 offset_left = -16.0
-offset_top = -34.0
+offset_top = -32.0
 offset_right = 16.0
-offset_bottom = -30.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
 rounded = true
 show_percentage = false
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=1010111517]
+z_index = 1
+y_sort_enabled = true
 offset_left = -16.0
 offset_top = -40.0
 offset_right = 16.0

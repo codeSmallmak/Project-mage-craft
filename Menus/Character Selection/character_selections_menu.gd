@@ -30,15 +30,16 @@ func _on_start() -> void:
 		return
 	SaveManager.save_data = {
 		"character": selected_character.id,
-		"current_map": "",
+		"current_map": "res://Maps/world1.tscn",
 		"current_node": "",
 		"completed_nodes": [],
 		"hp": selected_character.base_hp,
 		"max_hp": selected_character.base_hp,
-		"unlocked_spells": [],
+		"unlocked_spells": selected_character.starting_spells.map(func(s): return s.id),
 		"unlocked_energies": selected_character.starting_energies
 	}
 	SaveManager.write()
+	SpellLoader.load_spells_for_save()
 	get_tree().change_scene_to_file("res://Maps/world1.tscn")
 
 

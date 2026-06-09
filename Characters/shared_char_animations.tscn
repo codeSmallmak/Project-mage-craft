@@ -210,9 +210,11 @@ _data = {
 }
 
 [node name="SharedCharacterAnimations" type="Node2D" unique_id=1993663465]
+y_sort_enabled = true
 script = ExtResource("1_wsm6j")
 
 [node name="CharacterTexture" type="Sprite2D" parent="." unique_id=505822449]
+y_sort_enabled = true
 texture = ExtResource("1_innhd")
 hframes = 12
 vframes = 8

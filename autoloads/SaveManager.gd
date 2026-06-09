@@ -48,3 +48,8 @@ func is_node_completed(node_id: String) -> bool:
 	if not save_data.has("completed_nodes"):
 		return false
 	return save_data["completed_nodes"].has(node_id)
+
+func complete_level(node_id: String) -> void:
+	complete_node(node_id)
+	save_data["current_node"] = node_id
+	write()

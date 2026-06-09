@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://psm4onavmfjm"]
+
+[ext_resource type="Script" uid="uid://b1arkdxjipwgk" path="res://Loot/loot_entry.gd" id="1_kfp8b"]
+[ext_resource type="Script" uid="uid://oyh0o52vxwcs" path="res://Characters/Enemies/enemy_data.gd" id="2_77ykr"]
+[ext_resource type="SpriteFrames" uid="uid://b8m4efb1ho5ul" path="res://Characters/Enemies/ShieldEnemies/Leafy/leafy_frames.tres" id="3_26ga3"]
+[ext_resource type="Texture2D" uid="uid://2550i2d83a3x" path="res://Characters/Enemies/ShieldEnemies/Leafy/leafy.png" id="4_thnxk"]
+
+[resource]
+script = ExtResource("2_77ykr")
+display_name = "Leafy"
+sprite_sheet = ExtResource("4_thnxk")
+sprite_frames = ExtResource("3_26ga3")
+hp = 10
+can_shuffle = true
+attack_interval = 1.0
+metadata/_custom_type_script = "uid://oyh0o52vxwcs"
