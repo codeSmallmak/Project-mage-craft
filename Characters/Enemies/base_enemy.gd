@@ -43,7 +43,7 @@ func _ready() -> void:
 	health_bar.max_value = enemy_data.hp
 	health_bar.value = enemy_data.hp
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 # ═══════════════════════════════════════════════════════════════════════════════
 #  HIT INTERRUPT

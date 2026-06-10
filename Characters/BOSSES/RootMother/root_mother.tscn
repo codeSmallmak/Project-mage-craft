@@ -11,7 +11,7 @@ script = ExtResource("1_1iwxx")
 y_sort_enabled = true
 sprite_frames = ExtResource("4_jfmbf")
 animation = &"walk"
-frame_progress = 0.87862587
+frame_progress = 0.95586747
 offset = Vector2(0, -32)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1418295579]
